@@ -11,12 +11,20 @@
 
 #include "TROOT.h"
 #include "TSystem.h"
-#include "TCanvas.h"
-#include "TH1.h"
-#include "TF1.h"
 #include "TStyle.h"
+#include "TTree.h"
+
+#include "TCanvas.h"
+#include "TPad.h"
+
 #include "TLegend.h"
 #include "TPaveText.h"
+#include "TPaveStats.h"
+#include "TPaletteAxis.h"
+
+#include "TH1.h"
+#include "TH2.h"
+#include "TF1.h"
 
 namespace andi {  // everything is in a name space to structure it better
 
@@ -127,7 +135,7 @@ namespace andi {  // everything is in a name space to structure it better
 	 * 
 	 * @return pointer to a TPaveText
 	 */
-	TPaveText * makePadTitle(const TH1 * hist, double rightBorder = 0.96) {
+	TPaveText * makePadTitle(TH1 * hist, double rightBorder = 0.96) {
 		// canvas->SetTopMargin(0.075);
 		TPaveText *pt = new TPaveText(0.1, 0.93, rightBorder, 0.99, "NDC");
 		TString histName(hist->GetName()), histTitle(hist->GetTitle());
@@ -144,7 +152,7 @@ namespace andi {  // everything is in a name space to structure it better
 	 * 
 	 * @param hist Pointer to histogram (1D)
 	 */
-	void makePadTitleAndDraw(const TH1 * hist) {
+	void makePadTitleAndDraw(TH1 * hist) {
 		TPaveText *pt = makePadTitle(hist);
 		pt->Draw();
 	}
@@ -155,8 +163,8 @@ namespace andi {  // everything is in a name space to structure it better
 	 * @param hist Pointer to histogram (2D)
 	 * @param canvas Pointer to canvas where it's drawn upon, needed for margin movement
 	 */
-	void makePadTitleAndDraw(const TH2 * hist, const TCanvas * canvas) {
-		// canvas->SetRightMargin(0.2);
+	void makePadTitleAndDraw(TH2 * hist, TPad * pad) {  // You probably need to cast your pad to (TPad *), because they usually return a more abstract TVirtualPad
+		pad->SetRightMargin(0.08);
 		gPad->Update();
 		TPaveText * pt = makePadTitle((TH1D *)hist, 1-0.08);
 		TPaletteAxis * palette = (TPaletteAxis*)hist->GetListOfFunctions()->FindObject("palette");
@@ -173,7 +181,7 @@ namespace andi {  // everything is in a name space to structure it better
 	 * @param canvas Pointer to canvas as it should be saved (everything drawn already)
 	 * @param name The file name with which the files are saved
 	 */
-	void saveCanvas_allFileNames(const TCanvas * canvas, const TString name) {
+	void saveCanvas_allFileNames(TCanvas * canvas, TString name) {
 		canvas->SaveAs(name + ".pdf");
 		canvas->SaveAs(name + ".eps");
 		canvas->SaveAs(name + ".svg");
@@ -187,7 +195,7 @@ namespace andi {  // everything is in a name space to structure it better
 	 * @param macroname A basenme, e.g. your macro name, to sort the images into folder
 	 * @param prefixImg Will create a img subdirectory in the current directory to put all the images in, if true.
 	 */
-	void saveCanvas(const TCanvas * canvas, TString macroname, bool prefixImg = true) {
+	void saveCanvas(TCanvas * canvas, TString macroname, bool prefixImg = true) {
 		TString filename = canvas->GetTitle();
 		filename.ReplaceAll(" ", "_");
 		macroname.ReplaceAll(" ", "_");
@@ -199,7 +207,7 @@ namespace andi {  // everything is in a name space to structure it better
 	/**
 	 * @brief Saves a canvas, no subdirectories
 	 */
-	void saveCanvasFlat(const TCanvas * canvas, TString macroPrefix = "") {
+	void saveCanvasFlat(TCanvas * canvas, TString macroPrefix = "") {
 		TString filename = canvas->GetTitle();
 		filename.ReplaceAll(" ", "_");
 		if (macroPrefix != "") filename = macroPrefix + "--" + filename;
