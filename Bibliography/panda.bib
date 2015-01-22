@@ -2,36 +2,342 @@
 %% http://bibdesk.sourceforge.net/
 
 
-%% Created for Andreas Herten at 2013-12-08 12:56:52 +0100 
+%% Created for Andreas Herten at 2015-01-05 11:15:18 +0100 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
 
 
 
+@techreport{panda:tdr:lmd,
+	Author = {{The PANDA Collaboration}},
+	Date-Added = {2015-01-04 17:07:27 +0000},
+	Date-Modified = {2015-01-05 10:15:18 +0000},
+	Institution = {In preparation},
+	Title = {Technical Design Report for the PANDA Luminosity Detector},
+	Year = {2015},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QOS4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3RyZC1sbWQtLWRyYWZ0LnBkZtIXCxgZV05TLmRhdGFPEQIAAAAAAAIAAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUSdHJkLWxtZC0tZHJhZnQucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjOImdDPMaEAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANDPI5EAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAGxNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgB0cmQtbG1kLS1kcmFmdC5wZGYADgAmABIAdAByAGQALQBsAG0AZAAtAC0AZAByAGEAZgB0AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBXVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvdHJkLWxtZC0tZHJhZnQucGRmAAATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOAMoAzwDXAtsC3QLiAu0C9gMEAwgDDwMYAx0DKgMtAz8DQgNHAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAA0k=}}
+
+@techreport{panda:tdr:fsc,
+	Abstract = {This document is the Technical Design Report covering the two large spectrometer magnets of the PANDA detector set-up. It shows the conceptual design of the magnets and their anticipated performance. It precedes the tender and procurement of the magnets and, hence, is subject to possible modifications arising during this process.},
+	Author = {{The PANDA Collaboration}},
+	Date-Added = {2015-01-04 16:03:17 +0000},
+	Date-Modified = {2015-01-05 10:14:25 +0000},
+	Institution = {In preparation},
+	Title = {Technical Design Report for: PANDA Forward Spectrometer Calorimeter (FSC)},
+	Year = {2015},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QNi4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci1lbWMtZnNjLnBkZtIXCxgZV05TLmRhdGFPEQH0AAAAAAH0AAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUPdGRyLWVtYy1mc2MucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiw6aNDF+ZEAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANDF64EAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAGlNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgB0ZHItZW1jLWZzYy5wZGYAAA4AIAAPAHQAZAByAC0AZQBtAGMALQBmAHMAYwAuAHAAZABmAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAVFVzZXJzL0FuZGkvRG9jdW1lbnRzL1N0dWRpdW0vUHJvbW90aW9uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci1lbWMtZnNjLnBkZgATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOAMcAzADUAswCzgLTAt4C5wL1AvkDAAMJAw4DGwMeAzADMwM4AAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAzo=}}
+
+@techreport{panda:tdr:muon,
+	Abstract = {This document is the Technical Design Report covering the two large spectrometer magnets of the PANDA detector set-up. It shows the conceptual design of the magnets and their anticipated performance. It precedes the tender and procurement of the magnets and, hence, is subject to possible modifications arising during this process.},
+	Author = {{The PANDA Collaboration}},
+	Date-Added = {2014-12-28 15:29:28 +0000},
+	Date-Modified = {2015-01-04 16:20:13 +0000},
+	Title = {Technical Design Report for the: PANDA Muon System},
+	Year = {2012},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QMy4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci1tdW9uLnBkZtIXCxgZV05TLmRhdGFPEQHoAAAAAAHoAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUMdGRyLW11b24ucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAipIPNDEtzAAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANDEqSAAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAGZNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgB0ZHItbXVvbi5wZGYADgAaAAwAdABkAHIALQBtAHUAbwBuAC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBRVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvdGRyLW11b24ucGRmAAATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOAMQAyQDRAr0CvwLEAs8C2ALmAuoC8QL6Av8DDAMPAyEDJAMpAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAys=}}
+
+@url{panda:rich,
+	Date-Added = {2014-12-27 17:31:08 +0000},
+	Date-Modified = {2014-12-27 17:31:32 +0000},
+	Title = {PANDA Website: Aerogel Ring Imaging Cherenkov Counter},
+	Url = {http://www-panda.gsi.de/framework/det_iframe.php?section=RICH},
+	Urldate = {2014-12-27},
+	Bdsk-Url-1 = {http://www-panda.gsi.de/framework/det_iframe.php?section=RICH}}
+
+@article{panda:dirc:barrel:2014,
+	Abstract = {The PANDA experiment at the future Facility for Antiproton and Ion Research in Europe GmbH (FAIR) at GSI, Darmstadt will study fundamental questions of hadron physics and QCD using high-intensity cooled antiproton beams with momenta between 1.5 and 15 GeV/c. Hadronic PID in the barrel region of the PANDA detector will be provided by a DIRC (Detection of Internally Reflected Cherenkov light) counter. The design is based on the successful BABAR DIRC with several key improvements, such as fast photon timing and a compact imaging region. Detailed Monte Carlo simulation studies were performed for DIRC designs based on narrow bars or wide plates with a variety of focusing solutions. The performance of each design was characterized in terms of photon yield and single photon Cherenkov angle resolution and a maximum likelihood approach was used to determine the π/K separation. Selected design options were implemented in prototypes and tested with hadronic particle beams at GSI and CERN. This article describes the status of the design and R&D for the PANDA Barrel DIRC detector, with a focus on the performance of different DIRC designs in simulation and particle beams.},
+	Author = {G Kalicy and H Kumawat and J Schwiening and R Dzhygadlo and A Gerhardt and R Hohler and D Lehmann and B Lewandowski and M Patsyuk and K Peters and G Schepers and L Schmitt and C Schwarz and M Traxler and M Z{\"u}hlsdorf and V Kh Dodokhov and A Vodopianov and A Britting and W Eyrich and A Lehmann and F Uhlig and M D{\"u}ren and K F{\"o}hl and A Hayrapetyan and P Koch and B Kr{\"o}ck and O Merle and E Cowie and T Keri and R Montgomery and G Rosner and B Seitz and P Achenbach and M Cardinali and M Hoek and C Sfienti and M Thiel and C Ugur and P B{\"u}hler and L Gruber and J Marton and K Suzuki and E Widmann and The PANDA Cherenkov Group},
+	Date-Added = {2014-12-27 16:59:17 +0000},
+	Date-Modified = {2014-12-27 16:59:42 +0000},
+	Journal = {Journal of Instrumentation},
+	Number = {05},
+	Pages = {C05060},
+	Title = {Status of the PANDA Barrel DIRC},
+	Url = {http://stacks.iop.org/1748-0221/9/i=05/a=C05060},
+	Volume = {9},
+	Year = {2014},
+	Bdsk-Url-1 = {http://stacks.iop.org/1748-0221/9/i=05/a=C05060}}
+
+@url{panda:web:pid,
+	Date-Added = {2014-12-27 15:46:26 +0000},
+	Date-Modified = {2014-12-27 15:47:48 +0000},
+	Title = {PANDA Website: Particle ID},
+	Url = {http://www-panda.gsi.de/framework/det_iframe.php?section=Particle%20ID},
+	Urldate = {2014-12-27},
+	Bdsk-Url-1 = {http://www-panda.gsi.de/framework/det_iframe.php?section=Particle%20ID}}
+
+@article{panda:dirc:overview,
+	Author = {C. Schwarz and G. Ahmed and A. Britting and P. B{\"u}hler and E. Cowie and V.Kh. Dodokhov and M. D{\"u}ren and D. Dutta and W. Eyrich and K. F{\"o}hl and D.I. Glazier and A. Hayrapetyan and M. Hoek and R. Hohler and A. Lehmann and D. Lehmann and R. Kaiser and T. Keri and P. Koch and B. Kr{\"o}ck and J. Marton and O. Merle and R. Montgomery and K. Peters and S. Reinicke and G. Rosner and B. Roy and G. Schepers and L. Schmitt and J. Schwiening and B. Seitz and C. Sfienti and K. Suzuki and F. Uhlig and A.S. Vodopianov and D.P. Watts and W. Yu},
+	Date-Added = {2014-12-26 12:11:23 +0000},
+	Date-Modified = {2014-12-27 16:33:37 +0000},
+	Doi = {10.1016/j.nima.2010.10.116},
+	Issn = {0168-9002},
+	Journal = {Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment},
+	Keywords = {panda, dirc, pid},
+	Note = {Proceedings of the Seventh International Workshop on Ring Imaging Cherenkov Detectors},
+	Number = {1},
+	Pages = {169 - 172},
+	Title = {Particle identification for the PANDA detector},
+	Url = {http://www.sciencedirect.com/science/article/pii/S0168900210024010},
+	Volume = {639},
+	Year = {2011},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QQi4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL2RpcmMtcGlkLW92ZXJ2aWV3LXBhcGVyLnBkZtIXCxgZV05TLmRhdGFPEQIkAAAAAAIkAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUbZGlyYy1waWQtb3ZlcnZpZXctcGFwZXIucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAic+MtDDDfAAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANDC/+AAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAHVNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgBkaXJjLXBpZC1vdmVydmlldy1wYXBlci5wZGYAAA4AOAAbAGQAaQByAGMALQBwAGkAZAAtAG8AdgBlAHIAdgBpAGUAdwAtAHAAYQBwAGUAcgAuAHAAZABmAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAYFVzZXJzL0FuZGkvRG9jdW1lbnRzL1N0dWRpdW0vUHJvbW90aW9uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL2RpcmMtcGlkLW92ZXJ2aWV3LXBhcGVyLnBkZgATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOANMA2ADgAwgDCgMPAxoDIwMxAzUDPANFA0oDVwNaA2wDbwN0AAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAA3Y=},
+	Bdsk-Url-1 = {http://www.sciencedirect.com/science/article/pii/S0168900210024010},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1016/j.nima.2010.10.116}}
+
+@article{panda:dirc:disk,
+	Author = {E.N. Cowie and A. Britting and A. Clarkson and V.KH. Dodokhof and M. D{\"u}ren and D. Dutta and W. Eyrich and K F{\"o}hl and D.I. Glazer and A. Hayrapetyan and M. Hoek and R. Hohler and R. Kaiser and T. Keri and P. Koch and B. Kr{\"o}ck and A. Lehmann and D. Lehmann and S. Lumsden and J. Marton and O. Merle and R. Montgomery and K. Peters and S. Reinicke and G. Rosner and B. Roy and G. Schepers and L. Schmitt and C. Schwarz and J. Schwiening and B. Seitz and C. Sfienti and K. Suzuki and F. Uhlig and A.S. Vodopianov and D.P. Watts and W. Yu},
+	Date-Added = {2014-12-26 12:10:06 +0000},
+	Date-Modified = {2014-12-27 16:33:43 +0000},
+	Doi = {10.1016/j.nima.2010.09.132},
+	Issn = {0168-9002},
+	Journal = {Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment},
+	Keywords = {panda, dirc, fs, disk},
+	Note = {Proceedings of the Seventh International Workshop on Ring Imaging Cherenkov Detectors},
+	Number = {1},
+	Pages = {181 - 184},
+	Title = {{A focussing disc DIRC for PANDA}},
+	Url = {http://www.sciencedirect.com/science/article/pii/S0168900210021662},
+	Volume = {639},
+	Year = {2011},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QOi4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL2RpcmMtZGlzay1wYXBlci5wZGbSFwsYGVdOUy5kYXRhTxECBAAAAAACBAACAAAMTWFjaW50b3NoIEhEAAAAAAAAAAAAAAAAAAAAz47olEgrAAABpVbVE2RpcmMtZGlzay1wYXBlci5wZGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIbM2vQt4iyAAAAAAAAAAAAAwAEAAAJIAAAAAAAAAAAAAAAAAAAAAVwYW5kYQAAEAAIAADPjsx0AAAAEQAIAADQt3qiAAAAAQAgAaVW1QEZZDcAGlOsABpKSAAaOZIAGhWbABnwnQAZ8JoAAgBtTWFjaW50b3NoIEhEOlVzZXJzOgBBbmRpOgBEb2N1bWVudHM6AFN0dWRpdW06AFByb21vdGlvbjoAUGFwZXIgJiBSZXNlYXJjaDoAQmlidGV4OgBwYW5kYToAZGlyYy1kaXNrLXBhcGVyLnBkZgAADgAoABMAZABpAHIAYwAtAGQAaQBzAGsALQBwAGEAcABlAHIALgBwAGQAZgAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAFhVc2Vycy9BbmRpL0RvY3VtZW50cy9TdHVkaXVtL1Byb21vdGlvbi9QYXBlciAmIFJlc2VhcmNoL0JpYnRleC9wYW5kYS9kaXJjLWRpc2stcGFwZXIucGRmABMAAS8AABUAAgAL//8AAIAG0hscHR5aJGNsYXNzbmFtZVgkY2xhc3Nlc11OU011dGFibGVEYXRhox0fIFZOU0RhdGFYTlNPYmplY3TSGxwiI1xOU0RpY3Rpb25hcnmiIiBfEA9OU0tleWVkQXJjaGl2ZXLRJidUcm9vdIABAAgAEQAaACMALQAyADcAQABGAE0AVQBgAGcAagBsAG4AcQBzAHUAdwCEAI4AywDQANgC4ALiAucC8gL7AwkDDQMUAx0DIgMvAzIDRANHA0wAAAAAAAACAQAAAAAAAAAoAAAAAAAAAAAAAAAAAAADTg==},
+	Bdsk-Url-1 = {http://www.sciencedirect.com/science/article/pii/S0168900210021662},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1016/j.nima.2010.09.132}}
+
+@article{panda:dirc:barrel,
+	Author = {J. Schwiening},
+	Date-Added = {2014-12-26 12:08:16 +0000},
+	Date-Modified = {2014-12-27 16:33:47 +0000},
+	Doi = {10.1016/j.nima.2010.10.061},
+	Issn = {0168-9002},
+	Journal = {Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment},
+	Keywords = {panda, dirc, detector, barrel, ts},
+	Note = {Proceedings of the Seventh International Workshop on Ring Imaging Cherenkov Detectors},
+	Number = {1},
+	Pages = {315 - 318},
+	Title = {{The barrel DIRC detector for the PANDA experiment at FAIR}},
+	Url = {http://www.sciencedirect.com/science/article/pii/S0168900210023235},
+	Volume = {639},
+	Year = {2011},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QNS4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL2RpcmMtcGFwZXIucGRm0hcLGBlXTlMuZGF0YU8RAfAAAAAAAfAAAgAADE1hY2ludG9zaCBIRAAAAAAAAAAAAAAAAAAAAM+O6JRIKwAAAaVW1Q5kaXJjLXBhcGVyLnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACGzNH0LeIoQAAAAAAAAAAAAMABAAACSAAAAAAAAAAAAAAAAAAAAAFcGFuZGEAABAACAAAz47MdAAAABEACAAA0Ld6kQAAAAEAIAGlVtUBGWQ3ABpTrAAaSkgAGjmSABoVmwAZ8J0AGfCaAAIAaE1hY2ludG9zaCBIRDpVc2VyczoAQW5kaToARG9jdW1lbnRzOgBTdHVkaXVtOgBQcm9tb3Rpb246AFBhcGVyICYgUmVzZWFyY2g6AEJpYnRleDoAcGFuZGE6AGRpcmMtcGFwZXIucGRmAA4AHgAOAGQAaQByAGMALQBwAGEAcABlAHIALgBwAGQAZgAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAFNVc2Vycy9BbmRpL0RvY3VtZW50cy9TdHVkaXVtL1Byb21vdGlvbi9QYXBlciAmIFJlc2VhcmNoL0JpYnRleC9wYW5kYS9kaXJjLXBhcGVyLnBkZgAAEwABLwAAFQACAAv//wAAgAbSGxwdHlokY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjHR8gVk5TRGF0YVhOU09iamVjdNIbHCIjXE5TRGljdGlvbmFyeaIiIF8QD05TS2V5ZWRBcmNoaXZlctEmJ1Ryb290gAEACAARABoAIwAtADIANwBAAEYATQBVAGAAZwBqAGwAbgBxAHMAdQB3AIQAjgDGAMsA0wLHAskCzgLZAuIC8AL0AvsDBAMJAxYDGQMrAy4DMwAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAAAAM1},
+	Bdsk-Url-1 = {http://www.sciencedirect.com/science/article/pii/S0168900210023235},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1016/j.nima.2010.10.061}}
+
+@misc{panda:ftof:slides,
+	Author = {Belostotski, S.},
+	Date-Added = {2014-12-17 18:09:07 +0000},
+	Date-Modified = {2014-12-17 18:19:18 +0000},
+	Howpublished = {PANDA Collaboration Meeting (\emph{Talk})},
+	Month = {03},
+	Title = {Status of FTOF detectors},
+	Year = {2014}}
+
+@unpublished{panda:scitil:report,
+	Author = {The PANDA Collaboration},
+	Date-Added = {2014-11-26 18:25:32 +0000},
+	Date-Modified = {2014-11-26 18:30:55 +0000},
+	Note = {Internal},
+	Title = {Proposal for a Scintillator Tile Hodoscope for PANDA},
+	Year = {2011},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QQS4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3NjaXRpbC1pbnRlcm5hbF9yZXBvcnQucGRm0hcLGBlXTlMuZGF0YU8RAiAAAAAAAiAAAgAADE1hY2ludG9zaCBIRAAAAAAAAAAAAAAAAAAAAM+O6JRIKwAAAaVW1RpzY2l0aWwtaW50ZXJuYWxfcmVwb3J0LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8IRa0JvY9AAAAAAAAAAAAAMABAAACSAAAAAAAAAAAAAAAAAAAAAFcGFuZGEAABAACAAAz47MdAAAABEACAAA0JvK5AAAAAEAIAGlVtUBGWQ3ABpTrAAaSkgAGjmSABoVmwAZ8J0AGfCaAAIAdE1hY2ludG9zaCBIRDpVc2VyczoAQW5kaToARG9jdW1lbnRzOgBTdHVkaXVtOgBQcm9tb3Rpb246AFBhcGVyICYgUmVzZWFyY2g6AEJpYnRleDoAcGFuZGE6AHNjaXRpbC1pbnRlcm5hbF9yZXBvcnQucGRmAA4ANgAaAHMAYwBpAHQAaQBsAC0AaQBuAHQAZQByAG4AYQBsAF8AcgBlAHAAbwByAHQALgBwAGQAZgAPABoADABNAGEAYwBpAG4AdABvAHMAaAAgAEgARAASAF9Vc2Vycy9BbmRpL0RvY3VtZW50cy9TdHVkaXVtL1Byb21vdGlvbi9QYXBlciAmIFJlc2VhcmNoL0JpYnRleC9wYW5kYS9zY2l0aWwtaW50ZXJuYWxfcmVwb3J0LnBkZgAAEwABLwAAFQACAAv//wAAgAbSGxwdHlokY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjHR8gVk5TRGF0YVhOU09iamVjdNIbHCIjXE5TRGljdGlvbmFyeaIiIF8QD05TS2V5ZWRBcmNoaXZlctEmJ1Ryb290gAEACAARABoAIwAtADIANwBAAEYATQBVAGAAZwBqAGwAbgBxAHMAdQB3AIQAjgDSANcA3wMDAwUDCgMVAx4DLAMwAzcDQANFA1IDVQNnA2oDbwAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAAAANx}}
+
+@url{panda:ftof,
+	Date-Added = {2014-11-23 12:37:26 +0000},
+	Date-Modified = {2014-12-27 15:47:59 +0000},
+	Title = {PANDA Website: Time Of Flight System},
+	Url = {http://www-panda.gsi.de/framework/det_iframe.php?section=Particle%20ID},
+	Urldate = {2014-12-17},
+	Bdsk-Url-1 = {http://gdd.web.cern.ch/GDD/}}
+
+@inproceedings{panda:fts:bormio,
+	Author = {Martin J. Galuska and Jifeng Hu and Wolfgang K{\"u}hn and J. S{\"o}ren Lange and Yutie Liang and David M{\"u}nchow and Stefano Spataro and Bj{\"o}rn Spruck and Milan Wagner},
+	Booktitle = {Proceedings of Science (Bormio 2013)},
+	Collaboration = {PANDA Collaboration},
+	Date-Added = {2014-11-22 13:55:37 +0000},
+	Date-Modified = {2014-11-23 12:37:23 +0000},
+	Number = {023},
+	Title = {Hough Transform Based Pattern Recognition for the PANDA Forward Tracking System},
+	Year = {2013}}
+
+@url{panda:gem:principle:gasamp,
+	Date-Added = {2014-11-22 12:43:09 +0000},
+	Date-Modified = {2014-12-27 15:48:05 +0000},
+	Title = {DESY FLC-TPC},
+	Url = {http://www-flc.desy.de/tpc/basicsgem.php},
+	Urldate = {2014-11-22},
+	Webcite = {http://web.archive.org/web/20141122124357/http://www-flc.desy.de/tpc/basicsgem.php},
+	Bdsk-Url-1 = {http://gdd.web.cern.ch/GDD/}}
+
+@url{panda:gem:principle:holes,
+	Date-Added = {2014-11-22 12:25:56 +0000},
+	Date-Modified = {2014-11-22 12:34:02 +0000},
+	Title = {CERN Gas Detectors Development},
+	Url = {http://gdd.web.cern.ch/GDD/},
+	Bdsk-Url-1 = {http://gdd.web.cern.ch/GDD/}}
+
+@article{target:paper,
+	Abstract = {A novel internal-target system producing a stream of frozen hydrogen microspheres (pellets) has been installed at the \{CELSIUS\} ion storage ring. From test experiments in which the pellet stream crosses the beam of stored protons and deuterons it is concluded that an optimal target thickness of 5 × 1015 atoms/cm2 seen by the beams will give acceptable half-lives of the circulating beams, a few minutes at energies around 1 GeV, as well as acceptable vacuum conditions, about 10−6 mbar, in the scattering chamber. The system is intended for use in high-luminosity experiments with a close to 4 π detector configuration. },
+	Author = {C. Ekstr{\"o}m and C.-J. Frid{\'e}n and A. Jansson and J. Karlsson and S. Kullander and A. Larsson and G. Norman},
+	Date-Added = {2014-11-03 19:41:16 +0000},
+	Date-Modified = {2014-11-03 19:41:34 +0000},
+	Doi = {10.1016/0168-9002(96)00009-5},
+	Issn = {0168-9002},
+	Journal = {Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment},
+	Number = {3},
+	Pages = {572 - 574},
+	Title = {Hydrogen pellet targets for circulating particle beams},
+	Url = {http://www.sciencedirect.com/science/article/pii/0168900296000095},
+	Volume = {371},
+	Year = {1996},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QNy4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3RhcmdldC1wYXBlci5wZGbSFwsYGVdOUy5kYXRhTxEB+AAAAAAB+AACAAAMTWFjaW50b3NoIEhEAAAAAAAAAAAAAAAAAAAAz47olEgrAAABpVbVEHRhcmdldC1wYXBlci5wZGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGyusTQfZi7AAAAAAAAAAAAAwAEAAAJIAAAAAAAAAAAAAAAAAAAAAVwYW5kYQAAEAAIAADPjsx0AAAAEQAIAADQfYqrAAAAAQAgAaVW1QEZZDcAGlOsABpKSAAaOZIAGhWbABnwnQAZ8JoAAgBqTWFjaW50b3NoIEhEOlVzZXJzOgBBbmRpOgBEb2N1bWVudHM6AFN0dWRpdW06AFByb21vdGlvbjoAUGFwZXIgJiBSZXNlYXJjaDoAQmlidGV4OgBwYW5kYToAdGFyZ2V0LXBhcGVyLnBkZgAOACIAEAB0AGEAcgBnAGUAdAAtAHAAYQBwAGUAcgAuAHAAZABmAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAVVVzZXJzL0FuZGkvRG9jdW1lbnRzL1N0dWRpdW0vUHJvbW90aW9uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3RhcmdldC1wYXBlci5wZGYAABMAAS8AABUAAgAL//8AAIAG0hscHR5aJGNsYXNzbmFtZVgkY2xhc3Nlc11OU011dGFibGVEYXRhox0fIFZOU0RhdGFYTlNPYmplY3TSGxwiI1xOU0RpY3Rpb25hcnmiIiBfEA9OU0tleWVkQXJjaGl2ZXLRJidUcm9vdIABAAgAEQAaACMALQAyADcAQABGAE0AVQBgAGcAagBsAG4AcQBzAHUAdwCEAI4AyADNANUC0QLTAtgC4wLsAvoC/gMFAw4DEwMgAyMDNQM4Az0AAAAAAAACAQAAAAAAAAAoAAAAAAAAAAAAAAAAAAADPw==},
+	Bdsk-Url-1 = {http://www.sciencedirect.com/science/article/pii/0168900296000095},
+	Bdsk-Url-2 = {http://dx.doi.org/10.1016/0168-9002(96)00009-5}}
+
+@techreport{panda:tdr:target,
+	Author = {{PANDA Collaboration}},
+	Date-Added = {2014-11-03 19:36:03 +0000},
+	Date-Modified = {2014-11-03 19:36:56 +0000},
+	Month = {Mar},
+	Title = {Technical Design Report for the PANDA Internal Targets: The Cluster-Jet Target and Developments for the Pellet Target},
+	Year = {2012},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QNi4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci10YXJnZXRzLnBkZtIXCxgZV05TLmRhdGFPEQH0AAAAAAH0AAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUPdGRyLXRhcmdldHMucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa/YgdB73ucAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANB70NcAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAGlNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgB0ZHItdGFyZ2V0cy5wZGYAAA4AIAAPAHQAZAByAC0AdABhAHIAZwBlAHQAcwAuAHAAZABmAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAVFVzZXJzL0FuZGkvRG9jdW1lbnRzL1N0dWRpdW0vUHJvbW90aW9uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci10YXJnZXRzLnBkZgATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOAMcAzADUAswCzgLTAt4C5wL1AvkDAAMJAw4DGwMeAzADMwM4AAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAzo=}}
+
+@phdthesis{panda:target:thesis,
+	Abstract = {The PANDA experiment is a part of the future FAIR accelerator facility and will study the strong interaction by detecting the reaction products from antiproton-proton annihilations in a near full solid-angle configuration. One option for the internal proton target in PANDA is frozen micro-spheres of hydrogen, so-called pellets.
+
+Such a pellet target is interesting because of the unique characteristics it offers; the high target thickness, the small interaction volume, the minimal gas load on the vacuum system, and the possibility of tracking individual pellets. Nevertheless, it is possible to allocate the bulky equipment needed to produce the pellets at a few meters away from the beam. This way particle detectors can be located close and almost fully around the interaction point.
+
+This thesis is devoted to the optimization of a pellet target. To perform measurements, a Pellet-Test Station was built at The Svedberg Laboratory, Uppsala. For the first time, experimental results show the pellet distribution in space and time, and in addition, the vacuum along the pellet pipes. Furthermore, dedicated measurements carried out at CELSIUS/WASA demonstrate the existence of pellet heating as a result of beam-target interactions.
+
+In performing calculations, the potential problems with pellet heating at PANDA are outlined. Moreover, to look at the consequences for the desired physics, a reaction involving short-lived D-mesons has been used to show the advantages of pellets compared to a more spacious target.
+
+In conclusion, these studies lead to a deeper understanding of the pellet properties, which makes it possible to suggest future improvements, such as cooling with no vibrations.},
+	Author = {Nordhage, {\"O}rjan},
+	Date-Added = {2014-11-03 18:45:19 +0000},
+	Date-Modified = {2014-11-03 18:47:08 +0000},
+	Keywords = {Nuclear physics, PANDA, Internal target, Pellet target, Beam-target interaction, Vacuum, Tracking, D-meson decay length},
+	Language = {English},
+	Month = {Sept},
+	Pages = {105},
+	School = {Uppsala University, Teknisk-naturvetenskapliga vetenskapsomr{\aa}det, Physics, Department of Nuclear and Particle Physics},
+	Title = {On a Hydrogen Pellet Target for Antiproton Physics with PANDA},
+	Url = {http://urn.kb.se/resolve?urn=urn:nbn:se:uu:diva-7137},
+	Year = {2006},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QUi4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L290aGVyX3RoZXNpcy9OT1JESEFHRS1wZWxsZXRfdGFyZ2V0X2Zvcl9wYW5kYS5wZGbSFwsYGVdOUy5kYXRhTxECVgAAAAACVgACAAAMTWFjaW50b3NoIEhEAAAAAAAAAAAAAAAAAAAAz47olEgrAAABshawH05PUkRIQUdFLXBlbGxldF90YXIjMUIyMTZBOS5wZGYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGyFqnQfRjlAAAAAAAAAAAAAwAEAAAJIAAAAAAAAAAAAAAAAAAAAAxvdGhlcl90aGVzaXMAEAAIAADPjsx0AAAAEQAIAADQfQrVAAAAAQAgAbIWsAEZZDcAGlOsABpKSAAaOZIAGhWbABnwnQAZ8JoAAgCATWFjaW50b3NoIEhEOlVzZXJzOgBBbmRpOgBEb2N1bWVudHM6AFN0dWRpdW06AFByb21vdGlvbjoAUGFwZXIgJiBSZXNlYXJjaDoAQmlidGV4OgBvdGhlcl90aGVzaXM6AE5PUkRIQUdFLXBlbGxldF90YXIjMUIyMTZBOS5wZGYADgBKACQATgBPAFIARABIAEEARwBFAC0AcABlAGwAbABlAHQAXwB0AGEAcgBnAGUAdABfAGYAbwByAF8AcABhAG4AZABhAC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBwVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvb3RoZXJfdGhlc2lzL05PUkRIQUdFLXBlbGxldF90YXJnZXRfZm9yX3BhbmRhLnBkZgATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOAOMA6ADwA0oDTANRA1wDZQNzA3cDfgOHA4wDmQOcA64DsQO2AAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAA7g=}}
+
+@article{panda:emc:conf,
+	Abstract = {The PANDA collaboration at FAIR, Germany, will focus on undiscovered charm-meson states and glueballs in antiproton annihilations to study QCD phenomena in the non-perturbative regime. For fixed target experiments at the storage ring HESR a 4π-detector for tracking, particle ID and calorimetry is under development and construction to operate at high annihilation rates up to 20 MHz. The electromagnetic calorimeters are composed of a target spectrometer (EMC) based on PbWO 4 crystals and a shashlyk-type sampling calorimeter at the most forward region. The EMC, comprising more than 15,000 crystals, is operated at a temperature of −25$\,^{\circ}$C and read-out via large-area avalanche photo-diodes or vacuum phototriodes/tetrodes. The photo sensor signals are continuously digitized by sampling ADCs. More than 50% of the high quality PWO-II crystals are delivered and tested. The excellent performance with respect to energy, time and position information was determined over a shower energy range from 10 MeV up to 15 GeV by operating several prototype detectors. In addition, the concept of stimulated recovery has been investigated to recover radiation damage on- and off-line during the calorimeter operation. Besides the overall concept of the target spectrometer the response function of the shashlyk spectrometer down to photon energies even below 100 MeV is presented.},
+	Author = {Novotny, R W and the PANDA collaboration},
+	Date-Added = {2014-11-02 12:39:03 +0000},
+	Date-Modified = {2014-11-02 12:41:04 +0000},
+	Doi = {10.1088/1742-6596/404/1/012063},
+	Journal = {Journal of Physics: Conference Series},
+	Number = {1},
+	Pages = {012063},
+	Title = {The Electromagnetic Calorimetry of the PANDA Detector at FAIR},
+	Url = {http://stacks.iop.org/1742-6596/404/i=1/a=012063},
+	Volume = {404},
+	Year = {2012},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QMy4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL2VtYy1jb25mLnBkZtIXCxgZV05TLmRhdGFPEQHoAAAAAAHoAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUMZW1jLWNvbmYucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa/xTdB75MQAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANB71rQAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAGZNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgBlbWMtY29uZi5wZGYADgAaAAwAZQBtAGMALQBjAG8AbgBmAC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBRVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvZW1jLWNvbmYucGRmAAATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOAMQAyQDRAr0CvwLEAs8C2ALmAuoC8QL6Av8DDAMPAyEDJAMpAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAys=},
+	Bdsk-Url-1 = {http://stacks.iop.org/1742-6596/404/i=1/a=012063}}
+
+@techreport{panda:tdr:emc,
+	Author = {{The PANDA Collaboration}},
+	Date-Added = {2014-11-02 12:35:17 +0000},
+	Date-Modified = {2015-01-04 16:19:42 +0000},
+	Eprint = {arXiv:0810.1216},
+	Month = {Oct},
+	Title = {Technical Design Report for: PANDA Electromagnetic Calorimeter (EMC)},
+	Url = {http://arxiv.org/abs/0810.1216},
+	Year = {2008},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QMi4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci1lbWMucGRm0hcLGBlXTlMuZGF0YU8RAeQAAAAAAeQAAgAADE1hY2ludG9zaCBIRAAAAAAAAAAAAAAAAAAAAM+O6JRIKwAAAaVW1Qt0ZHItZW1jLnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABr+mn0HvjWgAAAAAAAAAAAAMABAAACSAAAAAAAAAAAAAAAAAAAAAFcGFuZGEAABAACAAAz47MdAAAABEACAAA0HvVSgAAAAEAIAGlVtUBGWQ3ABpTrAAaSkgAGjmSABoVmwAZ8J0AGfCaAAIAZU1hY2ludG9zaCBIRDpVc2VyczoAQW5kaToARG9jdW1lbnRzOgBTdHVkaXVtOgBQcm9tb3Rpb246AFBhcGVyICYgUmVzZWFyY2g6AEJpYnRleDoAcGFuZGE6AHRkci1lbWMucGRmAAAOABgACwB0AGQAcgAtAGUAbQBjAC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBQVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvdGRyLWVtYy5wZGYAEwABLwAAFQACAAv//wAAgAbSGxwdHlokY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjHR8gVk5TRGF0YVhOU09iamVjdNIbHCIjXE5TRGljdGlvbmFyeaIiIF8QD05TS2V5ZWRBcmNoaXZlctEmJ1Ryb290gAEACAARABoAIwAtADIANwBAAEYATQBVAGAAZwBqAGwAbgBxAHMAdQB3AIQAjgDDAMgA0AK4AroCvwLKAtMC4QLlAuwC9QL6AwcDCgMcAx8DJAAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAAAAMm}}
+
+@techreport{panda:tdr:magnet,
+	Abstract = {This document is the Technical Design Report covering the two large spectrometer magnets of the PANDA detector set-up. It shows the conceptual design of the magnets and their anticipated performance. It precedes the tender and procurement of the magnets and, hence, is subject to possible modifications arising during this process.},
+	Author = {The PANDA Collaboration and W. Erni and I. Keshelashvili and B. Krusche and M. Steinacher and Y. Heng and Z. Liu and H. Liu and X. Shen and O. Wang and H. Xu and J. Becker and F. Feldbauer and F. -H. Heinsius and T. Held and H. Koch and B. Kopf and M. Pelizaeus and T. Schroeder and M. Steinke and U. Wiedner and J. Zhong and A. Bianconi and M. Bragadireanu and D. Pantea and A. Tudorache and V. Tudorache and M. De Napoli and F. Giacoppo and G. Raciti and E. Rapisarda and C. Sfienti and E. Bialkowski and A. Budzanowski and B. Czech and M. Kistryn and S. Kliczewski and A. Kozela and P. Kulessa and K. Pysz and W. Schaefer and R. Siudak and A. Szczurek and W. Czy. zycki and M. Domagala and M. Hawryluk and E. Lisowski and F. Lisowski and L. Wojnar and D. Gil and P. Hawranek and B. Kamys and St. Kistryn and K. Korcyl and W. Krzemien and A. Magiera and P. Moskal and Z. Rudy and P. Salabura and J. Smyrski and A. Wronska and M. Al-Turany and I. Augustin and H. Deppe and H. Flemming and J. Gerl and K. Goetzen and R. Hohler and D. Lehmann and B. Lewandowski and J. Luehning and F. Maas and D. Mishra and H. Orth and K. Peters and T. Saito and G. Schepers and C. J. Schmidt and L. Schmitt and C. Schwarz and B. Voss and P. Wieczorek and A. Wilms and K. -T. Brinkmann and H. Freiesleben and R. Jaekel and R. Kliemt and T. Wuerschig and H. -G. Zaunick and V. M. Abazov and G. Alexeev and A. Arefiev and V. I. Astakhov and M. Yu. Barabanov and B. V. Batyunya and Yu. I. Davydov and V. Kh. Dodokhov and A. A. Efremov and A. G. Fedunov and A. A. Feshchenko and A. S. Galoyan and S. Grigoryan and A. Karmokov and E. K. Koshurnikov and V. Ch. Kudaev and V. I. Lobanov and Yu. Yu. Lobanov and A. F. Makarov and L. V. Malinina and V. L. Malyshev and G. A. Mustafaev and A. Olshevski and M. A. . Pasyuk and E. A. Perevalova and A. A. Piskun and T. A. Pocheptsov and G. Pontecorvo and V. K. Rodionov and Yu. N. Rogov and R. A. Salmin and A. G. Samartsev and M. G. Sapozhnikov and A. Shabratova and G. S. Shabratova and A. N. Skachkova and N. B. Skachkov and E. A. Strokovsky and M. K. Suleimanov and R. Sh. Teshev and V. V. Tokmenin and V. V. Uzhinsky and A. S. Vodopianov and S. A. Zaporozhets and N. I. Zhuravlev and A. G. Zorin and D. Branford and K. Foehl and D. Glazier and D. Watts and P. Woods and W. Eyrich and A. Lehmann and A. Teufel and S. Dobbs and Z. Metreveli and K. Seth and B. Tann and A. Tomaradze and D. Bettoni and V. Carassiti and A. Cecchi and P. Dalpiaz and E. Fioravanti and I. Garzia and M. Negrini and M. Savri`e and G. Stancari and B. Dulach and P. Gianotti and C. Guaraldo and V. Lucherini and E. Pace and A. Bersani and M. Macri and M. Marinelli and R. F. Parodi and I. Brodski and W. Doering and P. Drexler and M. Dueren and Z. Gagyi-Palffy and A. Hayrapetyan and M. Kotulla and W. Kuehn and S. Lange and M. Liu and V. Metag and M. Nanova and R. Novotny and C. Salz and J. Schneider and P. Schoenmeier and R. Schubert and S. Spataro and H. Stenzel and C. Strackbein and M. Thiel and U. Thoering and S. Yang and T. Clarkson and E. Cowie and E. Downie and G. Hill and M. Hoek and D. Ireland and R. Kaiser and T. Keri and I. Lehmann and K. Livingston and S. Lumsden and D. MacGregor and B. McKinnon and M. Murray and D. Protopopescu and G. Rosner and B. Seitz and G. Yang and M. Babai and A. K. Biegun and A. Bubak and E. Guliyev and V. S. Jothi and M. Kavatsyuk and H. Loehner and J. Messchendorp and H. Smit and J. C. van der Weele and F. Garcia and D. -O. Riska and M. Buescher and R. Dosdall and R. Dzhygadlo and A. Gillitzer and D. Grunwald and V. Jha and G. Kemmerling and H. Kleines and A. Lehrach and R. Maier and M. Mertens and H. Ohm and D. Prasuhn and T. Randriamalala and J. Ritman and M. Roeder and T. Stockmanns and P. Wintz and P. Wuestner and J. Kisiel and S. Li and Z. Li and Z. Sun and H. Xu and S. Fissum and K. Hansen and L. Isaksson and M. Lundin and B. Schroeder and P. Achenbach and M. C. Mora Espi and J. Pochodzalla and S. Sanchez and A. Sanchez-Lorente and V. I. Dormenev and A. A. Fedorov and M. V. Korzhik and O. V. Missevitch and V. Balanutsa and V. Chernetsky and A. Demekhin and A. Dolgolenko and P. Fedorets and A. Gerasimov and V. Goryachev and A. Boukharov and O. Malyshev and I. Marishev and A. Semenov and C. Hoeppner and B. Ketzer and I. Konorov and A. Mann and S. Neubert and S. Paul and Q. Weitzel and A. Khoukaz and T. Rausmann and A. Taeschner and J. Wessels and R. Varma and E. Baldin and K. Kotov and S. Peleganchuk and Yu. Tikhonov and J. Boucher and T. Hennino and R. Kunne and S. Ong and J. Pouthas and B. Ramstein and P. Rosier and M. Sudol and J. Van de Wiele and T. Zerguerras and K. Dmowski and R. Korzeniewski and D. Przemyslaw and B. Slowinski and G. Boca and A. Braghieri and S. Costanza and A. Fontana and P. Genova and L. Lavezzi and P. Montagna and A. Rotondi and N. I. Belikov and A. M. Davidenko and A. A. Derevschikov and Y. M. Goncharenko and V. N. Grishin and V. A. Kachanov and D. A. Konstantinov and V. A. Kormilitsin and V. I. Kravtsov and Y. A. Matulenko and Y. M. Melnik and A. P. Meschanin and N. G. Minaev and V. V. Mochalov and D. A. Morozov and L. V. Nogach and S. B. Nurushev and A. V. Ryazantsev and P. A. Semenov and L. F. Soloviev and A. V. Uzunian and A. N. Vasiliev and A. E. Yakutin and T. Baeck and B. Cederwall and C. Bargholtz and L. Geren and P. E. Tegner and S. Belostotski and G. Gavrilov and A. Itzotov and A. Kisselev and P. Kravchenko and S. Manaenkov and O. Miklukho and Y. Naryshkin and D. Veretennikov and V. Vikhrov and A. Zhadanov and L. Fava and D. Panzieri and D. Alberto and A. Amoroso and E. Botta and T. Bressani and S. Bufalino and M. P. Bussa and L. Busso and F. De Mori and M. Destefanis and L. Ferrero and A. Grasso and M. Greco and T. Kugathasan and M. Maggiora and S. Marcello and G. Serbanut and S. Sosio and R. Bertini and D. Calvo and S. Coli and P. De Remigis and A. Feliciello and A. Filippi and G. Giraudo and G. Mazza and A. Rivetti and K. Szymanska and F. Tosello and R. Wheadon and O. Morra and M. Agnello and F. Iazzi and K. Szymanska and R. Birsa and F. Bradamante and A. Bressan and A. Martin and H. Clement and C. Ekstroem and H. Calen and S. Grape and B. Hoeistad and T. Johansson and A. Kupsc and P. Marciniewski and E. Thome and J. Zlomanczuk and J. Diaz and A. Ortiz and S. Borsuk and A. Chlopik and Z. Guzik and J. Kopec and T. Kozlowski and D. Melnychuk and M. Plominski and J. Szewinski and K. Traczyk and B. Zwieglinski and P. Buehler and A. Gruber and P. Kienle and J. Marton and E. Widmann and J. Zmeskal},
+	Date-Added = {2014-11-02 12:32:45 +0000},
+	Date-Modified = {2014-11-02 12:34:04 +0000},
+	Eprint = {arXiv:0907.0169},
+	Title = {Technical Design Report for the PANDA Solenoid and Dipole Spectrometer Magnets},
+	Url = {http://arxiv.org/abs/0907.0169},
+	Year = {2009},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QNi4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci1tYWduZXRzLnBkZtIXCxgZV05TLmRhdGFPEQH0AAAAAAH0AAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUPdGRyLW1hZ25ldHMucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa/nltB74tQAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANB71MQAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAGlNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgB0ZHItbWFnbmV0cy5wZGYAAA4AIAAPAHQAZAByAC0AbQBhAGcAbgBlAHQAcwAuAHAAZABmAA8AGgAMAE0AYQBjAGkAbgB0AG8AcwBoACAASABEABIAVFVzZXJzL0FuZGkvRG9jdW1lbnRzL1N0dWRpdW0vUHJvbW90aW9uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci1tYWduZXRzLnBkZgATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOAMcAzADUAswCzgLTAt4C5wL1AvkDAAMJAw4DGwMeAzADMwM4AAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAAzo=}}
+
+@techreport{panda:tdr:mvd:arxiv,
+	Author = {{The PANDA Collaboration}},
+	Date-Added = {2014-11-02 12:26:05 +0000},
+	Date-Modified = {2015-01-04 16:20:35 +0000},
+	Eprint = {arXiv:1207.6581},
+	Keywords = {panda, mvd, tdr, arxiv},
+	Month = {Aug},
+	Number = {arXiv:1207.6581},
+	Primaryclass = {physics.ins-det},
+	Title = {Technical Design Report for the: PANDA Micro Vertex Detector},
+	Url = {http://arxiv.org/abs/1207.6581},
+	Year = {2012},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QOC4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci1tdmQtYXJ4aXYucGRm0hcLGBlXTlMuZGF0YU8RAfwAAAAAAfwAAgAADE1hY2ludG9zaCBIRAAAAAAAAAAAAAAAAAAAAM+O6JRIKwAAAaVW1RF0ZHItbXZkLWFyeGl2LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABr+GL0HvgnAAAAAAAAAAAAAMABAAACSAAAAAAAAAAAAAAAAAAAAAFcGFuZGEAABAACAAAz47MdAAAABEACAAA0HvSjAAAAAEAIAGlVtUBGWQ3ABpTrAAaSkgAGjmSABoVmwAZ8J0AGfCaAAIAa01hY2ludG9zaCBIRDpVc2VyczoAQW5kaToARG9jdW1lbnRzOgBTdHVkaXVtOgBQcm9tb3Rpb246AFBhcGVyICYgUmVzZWFyY2g6AEJpYnRleDoAcGFuZGE6AHRkci1tdmQtYXJ4aXYucGRmAAAOACQAEQB0AGQAcgAtAG0AdgBkAC0AYQByAHgAaQB2AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBWVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvdGRyLW12ZC1hcnhpdi5wZGYAEwABLwAAFQACAAv//wAAgAbSGxwdHlokY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjHR8gVk5TRGF0YVhOU09iamVjdNIbHCIjXE5TRGljdGlvbmFyeaIiIF8QD05TS2V5ZWRBcmNoaXZlctEmJ1Ryb290gAEACAARABoAIwAtADIANwBAAEYATQBVAGAAZwBqAGwAbgBxAHMAdQB3AIQAjgDJAM4A1gLWAtgC3QLoAvEC/wMDAwoDEwMYAyUDKAM6Az0DQgAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAAAANE}}
+
+@article{panda:pandaroot:paper-2011,
+	Abstract = {The PANDA experiment at the future facility FAIR will study anti-proton proton and anti-proton nucleus collisions in a beam momentum range from 2 GeV/c up to 15 GeV/c. The PandaRoot framework is part of the FairRoot project, a common software framework for the future FAIR experiments, and is currently used to simulate detector performances and to evaluate different detector concepts. It is based on the packages ROOT and Virtual MonteCarlo with Geant3 and Geant4. Different reconstruction algorithms for tracking and particle identification are under development and optimization, in order to achieve the performance requirements of the experiment. In the central tracker a first track fit is performed using a conformal map transformation based on a helix assumption, then the track is used as input for a Kalman Filter (package genfit ), using GEANE as track follower. The track is then correlated to the pid detectors (e.g. Cerenkov detectors, EM Calorimeter or Muon Chambers) to evaluate a global particle identification probability, using a Bayesian approach or multivariate methods. Further implemented packages in PandaRoot are: the analysis tools framework Rho, the kinematic fitter package for vertex and mass constraint fits, and a fast simulation code based upon parametrized detector responses. PandaRoot was also tested on an Alien-based GRID infrastructure. The contribution will report about the status of PandaRoot and show some example results for analysis of physics benchmark channels.},
+	Author = {Stefano Spataro and the PANDA Collaboration},
+	Collaboration = {PANDA Collaboration},
+	Date-Added = {2014-10-27 09:18:19 +0000},
+	Date-Modified = {2014-11-02 12:21:17 +0000},
+	Doi = {10.1088/1742-6596/331/3/032031},
+	Journal = {Journal of Physics: Conference Series},
+	Keywords = {panda, pandaroot},
+	Number = {3},
+	Pages = {032031},
+	Title = {The PandaRoot framework for simulation, reconstruction and analysis},
+	Url = {http://stacks.iop.org/1742-6596/331/i=3/a=032031},
+	Volume = {331},
+	Year = {2011},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QPy4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3BhbmRhcm9vdC1wYXBlci0yMDExLnBkZtIXCxgZV05TLmRhdGFPEQIYAAAAAAIYAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUYcGFuZGFyb290LXBhcGVyLTIwMTEucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaVXetBzy6IAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANBzvZIAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAHJNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgBwYW5kYXJvb3QtcGFwZXItMjAxMS5wZGYADgAyABgAcABhAG4AZABhAHIAbwBvAHQALQBwAGEAcABlAHIALQAyADAAMQAxAC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBdVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvcGFuZGFyb290LXBhcGVyLTIwMTEucGRmAAATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOANAA1QDdAvkC+wMAAwsDFAMiAyYDLQM2AzsDSANLA10DYANlAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAA2c=},
+	Bdsk-Url-1 = {http://stacks.iop.org/1742-6596/331/i=3/a=032031}}
+
+@article{panda:pandaroot:paper-2012,
+	Abstract = {The PANDA experiment will study the collisions of beams of anti-protons, with momenta ranging from 2-15 GeV/c, with fixed proton and nuclear targets in the charm energy range, and will be built at the FAIR facility. In preparation for the experiment, the PandaRoot software framework is under development for detector simulation, reconstruction and data analysis, running on an Alien2-based grid. The basic features are handled by the FairRoot framework, based on ROOT and Virtual Monte Carlo, while the PANDA detector specifics and reconstruction code are implemented inside PandaRoot. The realization of Technical Design Reports for the tracking detectors has pushed the finalization of the tracking reconstruction code, which is complete for the Target Spectrometer, and of the analysis tools. Particle Identification algorithms are currently implemented using Bayesian approach and compared to Multivariate Analysis methods. Moreover, the PANDA data acquisition foresees a triggerless operation in which events are not defined by a hardware 1st level trigger decision, but all the signals are stored with time stamps requiring a deconvolution by the software. This has led to a redesign of the software from an event basis to a time-ordered structure. In this contribution, the reconstruction capabilities of the Panda spectrometer will be reported, focusing on the performances of the tracking system and the results for the analysis of physics benchmark channels, as well as the new (and challenging) concept of time-based simulation and its implementation.},
+	Author = {Stefano Spataro},
+	Collaboration = {PANDA Collaboration},
+	Date-Added = {2014-10-27 09:16:49 +0000},
+	Date-Modified = {2014-11-02 12:21:04 +0000},
+	Doi = {10.1088/1742-6596/396/2/022048},
+	Journal = {Journal of Physics: Conference Series},
+	Keywords = {panda, pandaroot},
+	Number = {2},
+	Pages = {022048},
+	Title = {Event Reconstruction in the PandaRoot framework},
+	Url = {http://stacks.iop.org/1742-6596/396/i=2/a=022048},
+	Volume = {396},
+	Year = {2012},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QPy4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3BhbmRhcm9vdC1wYXBlci0yMDEyLnBkZtIXCxgZV05TLmRhdGFPEQIYAAAAAAIYAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUYcGFuZGFyb290LXBhcGVyLTIwMTIucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaVWltBzy4kAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANBzvXkAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAHJNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgBwYW5kYXJvb3QtcGFwZXItMjAxMi5wZGYADgAyABgAcABhAG4AZABhAHIAbwBvAHQALQBwAGEAcABlAHIALQAyADAAMQAyAC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBdVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvcGFuZGFyb290LXBhcGVyLTIwMTIucGRmAAATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOANAA1QDdAvkC+wMAAwsDFAMiAyYDLQM2AzsDSANLA10DYANlAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAA2c=},
+	Bdsk-Url-1 = {http://stacks.iop.org/1742-6596/396/i=2/a=022048}}
+
 @article{panda:physics,
+	Abstract = {To study fundamental questions of hadron and nuclear physics in interactions of antiprotons with nucleons and nuclei, the universal PANDA detector will be built. Gluonic excitations, the physics of strange and charm quarks and nucleon structure studies will be performed with unprecedented accuracy thereby allowing high-precision tests of the strong interaction. The proposed PANDA detector is a state-of-the art internal target detector at the HESR at FAIR allowing the detection and identification of neutral and charged particles generated within the relevant angular and energy range. This report presents a summary of the physics accessible at PANDA and what performance can be expected.},
 	Adsnote = {Provided by the SAO/NASA Astrophysics Data System},
 	Adsurl = {http://adsabs.harvard.edu/abs/2009arXiv0903.3905P},
 	Archiveprefix = {arXiv},
 	Author = {{PANDA Collaboration} and Erni, W. and {Keshelashvili}, I. and {Krusche}, B. and {Steinacher}, M. and {Heng}, Y. and {Liu}, Z. and {Liu}, H. and {Shen}, X. and {Wang}, O. and {Xu}, H. and others},
 	Collaboration = {PANDA Collaboration},
 	Date-Added = {2013-12-08 11:55:52 +0000},
-	Date-Modified = {2013-12-08 11:56:32 +0000},
+	Date-Modified = {2014-11-02 12:31:16 +0000},
 	Eprint = {0903.3905},
-	Journal = {arXiv preprint arXiv:0903.3905},
-	Keywords = {panda, physics,},
+	Keywords = {panda, physics},
 	Month = mar,
 	Primaryclass = {hep-ex},
 	Title = {{Physics Performance Report for PANDA: Strong Interaction Studies with Antiprotons}},
 	Url = {http://arxiv.org/abs/0903.3905},
 	Year = 2009,
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QRS4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3BoeXNpY3NfcGVyZm9ybWFuY2VfcmVwb3J0LnBkZtIXCxgZV05TLmRhdGFPEQIwAAAAAAIwAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAADPjuiUSCsAAAGlVtUecGh5c2ljc19wZXJmb3JtYW5jZV9yZXBvcnQucGRmAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa/mKtB74lAAAAAAAAAAAAADAAQAAAkgAAAAAAAAAAAAAAAAAAAABXBhbmRhAAAQAAgAAM+OzHQAAAARAAgAANB71EAAAAABACABpVbVARlkNwAaU6wAGkpIABo5kgAaFZsAGfCdABnwmgACAHhNYWNpbnRvc2ggSEQ6VXNlcnM6AEFuZGk6AERvY3VtZW50czoAU3R1ZGl1bToAUHJvbW90aW9uOgBQYXBlciAmIFJlc2VhcmNoOgBCaWJ0ZXg6AHBhbmRhOgBwaHlzaWNzX3BlcmZvcm1hbmNlX3JlcG9ydC5wZGYADgA+AB4AcABoAHkAcwBpAGMAcwBfAHAAZQByAGYAbwByAG0AYQBuAGMAZQBfAHIAZQBwAG8AcgB0AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBjVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvcGh5c2ljc19wZXJmb3JtYW5jZV9yZXBvcnQucGRmAAATAAEvAAAVAAIAC///AACABtIbHB0eWiRjbGFzc25hbWVYJGNsYXNzZXNdTlNNdXRhYmxlRGF0YaMdHyBWTlNEYXRhWE5TT2JqZWN00hscIiNcTlNEaWN0aW9uYXJ5oiIgXxAPTlNLZXllZEFyY2hpdmVy0SYnVHJvb3SAAQAIABEAGgAjAC0AMgA3AEAARgBNAFUAYABnAGoAbABuAHEAcwB1AHcAhACOANYA2wDjAxcDGQMeAykDMgNAA0QDSwNUA1kDZgNpA3sDfgODAAAAAAAAAgEAAAAAAAAAKAAAAAAAAAAAAAAAAAAAA4U=},
 	Bdsk-Url-1 = {http://arxiv.org/abs/0903.3905}}
 
-@article{panda:stttdr_epja,
+@article{panda:tdr:stt:epja,
 	Author = {{PANDA Collaboration} and Erni, W. and Keshelashvili, I. and Krusche, B. and Steinacher, M. and Heng, Y. and Liu, Z. and Liu, H. and Shen, X. and Wang, Q. and Xu, H. and Aab, A. and Albrecht, M. and Becker, J. and Csap{\'o}, A. and Feldbauer, F. and Fink, M. and Friedel, P. and Heinsius, F.H. and Held, T. and Klask, L. and Koch, H. and Kopf, B. and Leiber, S. and Leyhe, M. and Motzko, C. and Peliz{\"a}us, M. and Pychy, J. and Roth, B. and Schr{\"o}der, T. and Schulze, J. and Sowa, C. and Steinke, M. and Trifterer, T. and Wiedner, U. and Zhong, J. and Beck, R. and Bianco, S. and Brinkmann, K.T. and Hammann, C. and Hinterberger, F. and Kaiser, D. and Kliemt, R. and Kube, M. and Pitka, A. and Quagli, T. and Schmidt, C. and Schmitz, R. and Schnell, R. and Thoma, U. and Vlasov, P. and Walther, D. and Wendel, C. and W{\"u}rschig, T. and Zaunick, H.G. and Bianconi, A. and Bragadireanu, M. and Caprini, M. and Pantea, D. and Pantelica, D. and Pietreanu, D. and Serbina, L. and Tarta, P.D. and Kaplan, D. and Fiutowski, T. and Idzik, M. and Mindur, B. and Przyborowski, D. and Swientek, K. and Czech, B. and Kistryn, M. and Kliczewski, S. and Kozela, A. and Kulessa, P. and Lebiedowicz, P. and Pysz, K. and Sch{\"a}fer, W. and Siudak, R. and Szczurek, A. and Jowzaee, S. and Kajetanowicz, M. and Kamys, B. and Kistryn, S. and Korcyl, G. and Korcyl, K. and Krzemien, W. and Magiera, A. and Moskal, P. and Palka, M. and Rudy, Z. and Salabura, P. and Smyrski, J. and Wro{\'n}ska, A. and Augustin, I. and Lehmann, I. and Nimorus, D. and Schepers, G. and Al-Turany, M. and Arora, R. and Deppe, H. and Flemming, H. and Gerhardt, A. and G{\"o}tzen, K. and Jordi, A.F. and Kalicy, G. and Karabowicz, R. and Lehmann, D. and Lewandowski, B. and L{\"u}hning, J. and Maas, F. and Orth, H. and Patsyuk, M. and Peters, K. and Saito, T. and Schepers, G. and Schmidt, C.J. and Schmitt, L. and Schwarz, C. and Schwiening, J. and Traxler, M. and Voss, B. and Wieczorek, P. and Wilms, A. and Z{\"u}hlsdorf, M. and Abazov, V.M. and Alexeev, G. and Arefiev, A. and Astakhov, V.I. and Barabanov, M.Yu. and Batyunya, B.V. and Davydov, Yu.I. and Dodokhov, V.Kh. and Efremov, A.A. and Fedunov, A.G. and Festchenko, A.A. and Galoyan, A.S. and Grigoryan, S. and Karmokov, A. and Koshurnikov, E.K. and Lobanov, V.I. and Lobanov, Yu.Yu. and Makarov, A.F. and Malinina, L.V. and Malyshev, V.L. and Mustafaev, G.A. and Olshevskiy, A. and Pasyuk, M.A. and Perevalova, E.A. and Piskun, A.A. and Pocheptsov, T.A. and Pontecorvo, G. and Rodionov, V.K. and Rogov, Yu.N. and Salmin, R.A. and Samartsev, A.G. and Sapozhnikov, M.G. and Shabratova, G.S. and Skachkova, A.N. and Skachkov, N.B. and Strokovsky, E.A. and Suleimanov, M.K. and Teshev, R.Sh. and Tokmenin, V.V. and Uzhinsky, V.V. and Vodopyanov, A.S. and Zaporozhets, S.A. and Zhuravlev, N.I. and Zorin, A.G. and Branford, D. and Glazier, D. and Watts, D. and Woods, P. and Britting, A. and Eyrich, W. and Lehmann, A. and Uhlig, F. and Dobbs, S. and Metreveli, Z. and Seth, K. and Tomaradze, A. and Xiao, T. and Bettoni, D. and Carassiti, V. and Cotta Ramusino, A. and Dalpiaz, P. and Drago, A. and Fioravanti, E. and Garzia, I. and Savri{\`e}, M. and Stancari, G. and Bianchi, N. and Gianotti, P. and Guaraldo, C. and Lucherini, V. and Orecchini, D. and Pace, E. and Bersani, A. and Bracco, G. and Macri, M. and Parodi, R.F. and Bremer, D. and Dormenev, V. and Drexler, P. and D{\"u}ren, M. and Eissner, T. and F{\"o}hl, K. and Galuska, M. and Gessler, T. and Hayrapetyan, A. and Hu, J. and Koch, P. and Kr{\"o}ck, B. and K{\"u}hn, W. and Lange, S. and Liang, Y. and Merle, O. and Metag, V. and Moritz, M. and M{\"u}nchow, D. and Nanova, M. and Novotny, R. and Spruck, B. and Stenzel, H. and Ullrich, T. and Werner, M. and Xu, H. and Euan, C. and Hoek, M. and Ireland, D. and Keri, T. and Montgomery, R. and Protopopescu, D. and Rosner, G. and Seitz, B. and Babai, M. and Glazenborg-Kluttig, A. and Kavatsyuk, M. and Lemmens, P. and Lindemulder, M. and L{\"o}hner, H. and Messchendorp, J. and Moeini, H. and Schakel, P. and Schreuder, F. and Smit, H. and Tambave, G. and van der Weele, J.C. and Veenstra, R. and Sohlbach, H. and B{\"u}scher, M. and Deermann, D. and Dosdall, R. and Esch, S. and Gillitzer, A. and Goldenbaum, F. and Grunwald, D. and Henssler, S. and Herten, A. and Hu, Q. and Kemmerling, G. and Kleines, H. and Kozlov, V. and Lehrach, A. and Maier, R. and Mertens, M. and Ohm, H. and Orfanitski, S. and Prasuhn, D. and Randriamalala, T. and Ritman, J. and R{\"o}der, M. and Schadmand, S. and Serdyuk, V. and Sterzenbach, G. and Stockmanns, T. and Wintz, P. and W{\"u}stner, P. and Xu, H. and Kisiel, J. and Li, S. and Li, Z. and Sun, Z. and Xu, H. and Rigato, V. and Fissum, S. and Hansen, K. and Isaksson, L. and Lundin, M. and Schr{\"o}der, B. and Achenbach, P. and Bleser, S. and Cahit, U. and Cardinali, M. and Denig, A. and Distler, M. and Fritsch, M. and Jasinski, P. and Kangh, D. and Karavdina, A. and Lauth, W. and Merkel, H. and Michel, M. and Mora Espi, M.C. and M{\"u}ller, U. and Pochodzalla, J. and Sanchez, S. and Sanchez-Lorente, A. and Schlimme, S. and Sfienti, C. and Thiel, M. and Weber, T. and Dormenev, V.I. and Fedorov, A.A. and Korzhik, M.V. and Missevitch, O.V. and Balanutsa, V. and Chernetsky, V. and Demekhin, A. and Dolgolenko, A. and Fedorets, P. and Gerasimov, A. and Goryachev, V. and Varentsov, V. and Boukharov, A. and Malyshev, O. and Marishev, I. and Semenov, A. and B{\"o}hmer, F. and D{\o}rheim, S. and Ketzer, B. and Paul, S. and Hergem{\"o}ller, A.K. and Khoukaz, A. and K{\"o}hler, E. and T{\"a}schner, A. and Wessels, J. and Varma, R. and Chaterjee, A. and Jha, V. and Kailas, S. and Roy, B.J. and Yan, Y. and Chinorat, K. and Khanchai, K. and Ayut, L. and Pomrad, S. and Baldin, E. and Kotov, K. and Peleganchuk, S. and Tikhonov, Yu. and Boucher, J. and Chambert, V. and Dbeyssi, A. and Gumberidze, M. and Hennino, T. and Imre, M. and Kunne, R. and Le Galliard, C. and Ma, B. and Marchand, D. and Maroni, A. and Ong, S. and Ramstein, B. and Rosier, P. and Tomasi-Gustafsson, E. and Van de Wiele, J. and Boca, G. and Braghieri, A. and Costanza, S. and Genova, P. and Lavezzi, L. and Montagna, P. and Rotondi, A. and Abramov, V. and Belikov, N. and Davidenko, A. and Derevschikov, A. and Goncharenko, Y. and Grishin, V. and Kachanov, V. and Konstantinov, D. and Kormilitsin, V. and Melnik, Y. and Levin, A. and Minaev, N. and Mochalov, V. and Morozov, D. and Nogach, L. and Poslavskiy, S. and Ryazantsev, A. and Ryzhikov, S. and Semenov, P. and Shein, I. and Uzunian, A. and Vasiliev, A. and Yakutin, A. and B{\"a}ck, T. and Cederwall, B. and Mak{\'o}nyi, K. and Tegn{\'e}r, P.E. and von W{\"u}rtemberg, K.M. and Belostotski, S. and Gavrilov, G. and Itzotov, A. and Kashchuk, A. and Kisselev, A. and Kravchenko, P. and Levitskaya, O. and Manaenkov, S. and Miklukho, O. and Naryshkin, Y. and Veretennikov, D. and Vikhrov, V. and Zhadanov, A. and Alberto, D. and Amoroso, A. and Bussa, M.P. and Busso, L. and Mori, F. and Destefanis, M. and Fava, L. and Ferrero, L. and Greco, M. and Maggiora, M. and Marcello, S. and Sosio, S. and Spataro, S. and Zotti, L. and Calvo, D. and Coli, S. and Remigis, P. and Filippi, A. and Giraudo, G. and Lusso, S. and Mazza, G. and Morra, O. and Rivetti, A. and Wheadon, R. and Iazzi, F. and Lavagno, A. and Younis, H. and Birsa, R. and Bradamante, F. and Bressan, A. and Martin, A. and Clement, H. and Galander, B. and Caldeira Balkest{\aa}hl, L. and Cal{\'e}n, H. and Fransson, K. and Johansson, T. and Kupsc, A. and Marciniewski, P. and Thom{\'e}, E. and Wolke, M. and Zlomanczuk, J. and D{\'\i}az, J. and Ortiz, A. and Dmowski, K. and Duda, P. and Korzeniewski, R. and Slowinski, B. and Chlopik, A. and Guzik, Z. and Kosinski, K. and Melnychuk, D. and Wasilewski, A. and Wojciechowski, M. and Wronka, S. and Wysocka, A. and Zwieglinski, B. and B{\"u}hler, P. and Hartman, O.N. and Kienle, P. and Marton, J. and Suzuki, K. and Widmann, E. and Zmeskal, J.},
 	Collaboration = {PANDA Collaboration},
 	Date-Added = {2013-12-08 11:55:52 +0000},
-	Date-Modified = {2013-12-08 11:56:18 +0000},
+	Date-Modified = {2014-11-02 12:18:20 +0000},
 	Doi = {10.1140/epja/i2013-13025-8},
 	Issn = {1434-6001},
 	Journal = {The European Physical Journal A},
@@ -40,17 +346,17 @@
 	Number = {2},
 	Pages = {1-104},
 	Publisher = {Springer Berlin Heidelberg},
-	Title = {{Technical design report for the $\overline{P}$ANDA (AntiProton Annihilations at Darmstadt) Straw Tube Tracker}},
+	Title = {{Technical design report for the PANDA (AntiProton Annihilations at Darmstadt) Straw Tube Tracker}},
 	Url = {http://dx.doi.org/10.1140/epja/i2013-13025-8},
 	Volume = {49},
 	Year = {2013},
-	Bdsk-Url-1 = {http://dx.doi.org/10.1140/epja/i2013-13025-8}}
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QMi4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci1zdHQucGRm0hcLGBlXTlMuZGF0YU8RAeQAAAAAAeQAAgAADE1hY2ludG9zaCBIRAAAAAAAAAAAAAAAAAAAAM+O6JRIKwAAAaVW1Qt0ZHItc3R0LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABr9v30HvfEwAAAAAAAAAAAAMABAAACSAAAAAAAAAAAAAAAAAAAAAFcGFuZGEAABAACAAAz47MdAAAABEACAAA0HvRAwAAAAEAIAGlVtUBGWQ3ABpTrAAaSkgAGjmSABoVmwAZ8J0AGfCaAAIAZU1hY2ludG9zaCBIRDpVc2VyczoAQW5kaToARG9jdW1lbnRzOgBTdHVkaXVtOgBQcm9tb3Rpb246AFBhcGVyICYgUmVzZWFyY2g6AEJpYnRleDoAcGFuZGE6AHRkci1zdHQucGRmAAAOABgACwB0AGQAcgAtAHMAdAB0AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBQVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvdGRyLXN0dC5wZGYAEwABLwAAFQACAAv//wAAgAbSGxwdHlokY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjHR8gVk5TRGF0YVhOU09iamVjdNIbHCIjXE5TRGljdGlvbmFyeaIiIF8QD05TS2V5ZWRBcmNoaXZlctEmJ1Ryb290gAEACAARABoAIwAtADIANwBAAEYATQBVAGAAZwBqAGwAbgBxAHMAdQB3AIQAjgDDAMgA0AK4AroCvwLKAtMC4QLlAuwC9QL6AwcDCgMcAx8DJAAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAAAAMm}}
 
-@techreport{panda:stttdr_arxiv,
+@techreport{panda:tdr:stt:arxiv,
 	Author = {{PANDA Collaboration} and Erni, W and Keshelashvili, I and Krusche, B and Steinacher, M and Heng, Y and Liu, Z and Liu, H and Shen, X and Wang, Q and Xu, H and Aab, A and Albrecht, M and Becker, J and Csap{\'o}, A and Feldbauer, F and Fink, M and Friedel, P and Heinsius, F H and Held, T and Klask, L and Koch, H and Kopf, B and Leiber, S and Leyhe, M and Motzko, C and Peliz{\"a}us, M and Pychy, J and Roth, B and Schr{\"o}der, T and Schulze, J and Sowa, C and Steinke, M and Trifterer, T and Wiedner, U and Zhong, J and Beck, R and Bianco, S and Brinkmann, K T and Hammann, C and Hinterberger, F and Kaiser, D and Kliemt, R and Kube, M and Pitka, A and Quagli, T and Schmidt, C and Schmitz, R and Schnell, R and Thoma, U and Vlasov, P and Walther, D and Wendel, C and W{\"u}rschig, T and Zaunick, H G and Bianconi, A and Bragadireanu, M and Caprini, M and Pantea, D and Pantelica, D and Pietreanu, D and Serbina, L and Tarta, P D and Kaplan, D and Fiutowski, T and Idzik, M and Mindur, B and Przyborowski, D and Swientek, K and Czech, B and Kistryn, M and Kliczewski, S and Kozela, A and Kulessa, P and Lebiedowicz, P and Pysz, K and Sch{\"a}fer, W and Siudak, R and Szczurek\inst, A and Jowzaee, S and Kajetanowicz, M and Kamys, B and Kistryn, S and Korcyl, G and Korcyl, K and Krzemien, W and Magiera, A and Moskal, P and Palka, M and Rudy, Z and Salabura, P and Smyrski, J and Wro{\'n}ska\inst, A and Al-Turany, M and Arora, R and Augustin, I and Deppe, H and Flemming, H and Gerhardt, A and G{\"o}tzen, K and Jordi, A F and Kalicy, G and Karabowicz, R and Lehmann, D and Lewandowski, B and L{\"u}hning, J and Maas, F and Orth, H and Patsyuk, M and Peters, K and Saito, T and Schepers, G and Schmidt, C J and Schmitt, L and Schwarz, C and Schwiening, J and Traxler, M and Voss, B and Wieczorek, P and Wilms, A and Z{\"u}hlsdorf\inst, M and Abazov, V M and Alexeev, G and Arefiev, A and Astakhov, V I and Barabanov, M Yu and Batyunya, B V and Davydov, Yu I and Dodokhov, V Kh and Efremov, A A and Fedunov, A G and Festchenko, A A and Galoyan, A S and Grigoryan, S and Karmokov, A and Koshurnikov, E K and Lobanov, V I and Lobanov, Yu Yu and Makarov, A F and Malinina, L V and Malyshev, V L and Mustafaev, G A and Olshevskiy, A and Pasyuk, M A and Perevalova, E A and Piskun, A A and Pocheptsov, T A and Pontecorvo, G and Rodionov, V K and Rogov, Yu N and Salmin, R A and Samartsev, A G and Sapozhnikov, M G and Shabratova, G S and Skachkova, A N and Skachkov, N B and Strokovsky, E A and Suleimanov, M K and Teshev, R Sh and Tokmenin, V V and Uzhinsky, V V and Vodopyanov, A S and Zaporozhets, S A and Zhuravlev, N I and Zorin, A G and Branford, D and Glazier, D and Watts, D and Woods, P and Britting, A and Eyrich, W and Lehmann, A and Uhlig, F and Dobbs, S and Metreveli, Z and Seth, K and Tomaradze, A and Xiao, T and Bettoni, D and Carassiti, V and Ramusino, A Cotta and Dalpiaz, P and Drago, A and Fioravanti, E and Garzia, I and Savri{\`e}, M and Stancari, G and Bianchi, N and Gianotti, P and Guaraldo, C and Lucherini, V and Orecchini, D and Pace, E and Bersani, A and Bracco, G and Macri, M and Parodi, R F and Bremer, D and Dormenev, V and Drexler, P and D{\"u}ren, M and Eissner, T and F{\"o}hl, K and Galuska, M and Gessler, T and Hayrapetyan, A and Hu, J and Koch, P and Kr{\"o}ck, B and K{\"u}hn, W and Lange, S and Liang, Y and Merle, O and Metag, V and Moritz, M and M{\"u}nchow, D and Nanova, M and Novotny, R and Spruck, B and Stenzel, H and Ullrich, T and Werner, M and Xu, H and Euan, C and Hoek, M and Ireland, D and Keri, T and Montgomery, R and Protopopescu, D and Rosner, G and Seitz, B and Babai, M and Glazenborg-Kluttig, A and Kavatsyuk, M and Lemmens, P and Lindemulder, M and L{\"o}hner, H and Messchendorp, J and Moeini, H and Schakel, P and Schreuder, F and Smit, H and Tambave, G and Weele, J C van der and Veenstra\inst, R and Sohlbach, H and B{\"u}scher, M and Deermann, D and Dosdall, R and Esch, S and Gillitzer, A and Goldenbaum, F and Grunwald, D and Henssler, S and Herten, A and Hu, Q and Kemmerling, G and Kleines, H and Kozlov, V and Lehrach, A and Maier, R and Mertens, M and Ohm, H and Orfanitski, S and Prasuhn, D and Randriamalala, T and Ritman, J and Schadmand, S and Serdyuk, V and Sterzenbach, G and Stockmanns, T and Wintz, P and W{\"u}stner, P and Xu, H and Kisiel, J and Li, S and Li, Z and Sun, Z and Xu, H and Rigato, V and Fissum, S and Hansen, K and Isaksson, L and Lundin, M and Schr{\"o}der, B and Achenbach, P and Bleser, S and Cahit, U and Cardinali, M and Denig, A and Distler, M and Fritsch, M and Kangh, D and Karavdina, A and Lauth, W and Merkel, H and Michel, M and Espi, M C Mora and M{\"u}ller, U and Pochodzalla, J and Prometeusz, J and Sanchez, S and Sanchez-Lorente, A and Schlimme, S and Sfienti, C and Weber\inst, M Thiel T and Dormenev, V I and Fedorov, A A and Korzhik, M V and Missevitch, O V and Balanutsa, V and Chernetsky, V and Demekhin, A and Dolgolenko, A and Fedorets, P and Gerasimov, A and Goryachev, V and Varentsov, V and Boukharov, A and Malyshev, O and Marishev, I and Semenov, A and B{\"o}hmer, F and D{\o}rheim, S and Ketzer, B and Paul, S and Hergem{\"o}ller, A K and Khoukaz, A and K{\"o}hler, E and T{\"a}schner, A and Wessels, J and Varma, R and Chaterjee, A and Jha, V and Kailas, S and Roy, B and Yan, Y and Chinorat, K and Khanchai, K and Ayut, L and Pomrad, S and Baldin, E and Kotov, K and Peleganchuk, S and Tikhonov, Yu and Boucher, J and Chambert, V and Dbeyssi, A and Hennino, T and Imre, M and Kunne, R and Galliard, C Le and Ma, B and Marchand, D and Maroni, A and Ong, S and Ramstein, B and Rosier, P and Sudol, M and Tomasi-Gustafsson, E and Wiele, J Van de and Boca, G and Braghieri, A and Costanza, S and Genova, P and Lavezzi, L and Montagna, P and Rotondi, A and Abramov, V and Belikov, N and Davidenko, A and Derevschikov, A and Goncharenko, Y and Grishin, V and Kachanov, V and Konstantinov, D and Kormilitsin, V and Melnik, Y and Levin, A and Minaev, N and Mochalov, V and Morozov, D and Nogach, L and Poslavskiy, S and Ryazantsev, A and Ryzhikov, S and Semenov, P and Shein, I and Uzunian, A and Vasiliev, A and Yakutin, A and B{\"a}ck, T and Cederwall, B and Mak{\'o}nyi, K and Tegn{\'e}r, P E and W{\"u}rtemberg, K M von and Belostotski, S and Gavrilov, G and Itzotov, A and Kashchuk, A and Kisselev, A and Kravchenko, P and Levitskaya, O and Manaenkov, S and Miklukho, O and Naryshkin, Y and Veretennikov, D and Vikhrov, V and Zhadanov, A and Alberto, D and Amoroso, A and Bussa, M P and Busso, L and Mori, F De and Destefanis, M and Fava, L and Ferrero, L and Greco, M and Maggiora, M and Marcello, S and Sosio, S and Spataro, S and Zotti, L and Calvo, D and Coli, S and Remigis, P De and Filippi, A and Giraudo, G and Lusso, S and Mazza, G and Morra, O and Rivetti, A and Wheadon, R and Iazzi, F and Lavagno, A and Younis, H and Birsa, R and Bradamante, F and Bressan, A and Martin, A and Clement, H and Galander, B and Balkestal, L Caldeira and Cal{\'e}n, H and Fransson, K and Johansson, T and Kupsc, A and Marciniewski, P and Thom{\'e}, E and Wolke, M and Zlomanczuk, J and D{\'\i}az, J and Ortiz, A and Dmowski, K and Korzeniewski, R and Przemyslaw, D and Slowinski, B and Chlopik, A and Guzik, Z and Kosinski, K and Melnychuk, D and Wasilewski, A and Wojciechowski, M and Wronka, S and Wysocka, A and Zwieglinski, B and B{\"u}hler, P and Hartman, O and Kienle, P and Marton, J and Suzuki, K and Widmann, E and Zmeskal, J},
 	Collaboration = {PANDA Collaboration},
 	Date-Added = {2013-12-08 11:55:52 +0000},
-	Date-Modified = {2013-12-08 11:55:52 +0000},
+	Date-Modified = {2014-11-02 12:18:45 +0000},
 	Doi = {10.1140/epja/i2013-13025-8},
 	Keywords = {panda, stt, tdr, arxiv},
 	Month = {May},
@@ -60,5 +366,6 @@
 	Title = {{Technical Design Report for the: PANDA Straw Tube Tracker}},
 	Url = {http://arxiv.org/abs/1205.5441},
 	Year = {2012},
+	Bdsk-File-1 = {YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAFgAdccmVsYXRpdmVQYXRoWWFsaWFzRGF0YV8QOC4uLy4uLy4uL1BhcGVyICYgUmVzZWFyY2gvQmlidGV4L3BhbmRhL3Rkci1zdHQtYXJ4aXYucGRm0hcLGBlXTlMuZGF0YU8RAfwAAAAAAfwAAgAADE1hY2ludG9zaCBIRAAAAAAAAAAAAAAAAAAAAM+O6JRIKwAAAaVW1RF0ZHItc3R0LWFyeGl2LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABr9550Hvf7gAAAAAAAAAAAAMABAAACSAAAAAAAAAAAAAAAAAAAAAFcGFuZGEAABAACAAAz47MdAAAABEACAAA0HvR3gAAAAEAIAGlVtUBGWQ3ABpTrAAaSkgAGjmSABoVmwAZ8J0AGfCaAAIAa01hY2ludG9zaCBIRDpVc2VyczoAQW5kaToARG9jdW1lbnRzOgBTdHVkaXVtOgBQcm9tb3Rpb246AFBhcGVyICYgUmVzZWFyY2g6AEJpYnRleDoAcGFuZGE6AHRkci1zdHQtYXJ4aXYucGRmAAAOACQAEQB0AGQAcgAtAHMAdAB0AC0AYQByAHgAaQB2AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgBWVXNlcnMvQW5kaS9Eb2N1bWVudHMvU3R1ZGl1bS9Qcm9tb3Rpb24vUGFwZXIgJiBSZXNlYXJjaC9CaWJ0ZXgvcGFuZGEvdGRyLXN0dC1hcnhpdi5wZGYAEwABLwAAFQACAAv//wAAgAbSGxwdHlokY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjHR8gVk5TRGF0YVhOU09iamVjdNIbHCIjXE5TRGljdGlvbmFyeaIiIF8QD05TS2V5ZWRBcmNoaXZlctEmJ1Ryb290gAEACAARABoAIwAtADIANwBAAEYATQBVAGAAZwBqAGwAbgBxAHMAdQB3AIQAjgDJAM4A1gLWAtgC3QLoAvEC/wMDAwoDEwMYAyUDKAM6Az0DQgAAAAAAAAIBAAAAAAAAACgAAAAAAAAAAAAAAAAAAANE},
 	Bdsk-Url-1 = {http://arxiv.org/abs/1205.5441},
 	Bdsk-Url-2 = {http://dx.doi.org/10.1140/epja/i2013-13025-8}}
