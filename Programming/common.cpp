@@ -32,7 +32,7 @@ namespace andi {  // everything is in a name space to structure it better
 	 * @brief Set my custom ROOT canvas style
 	 * @details Gets rid of the margins and sets some other stuff
 	 */
-	void setCustomStyle() {
+	void setCustomStyle(bool showStats = true) {
 		TStyle* customStyle = new TStyle("customStyle", "customStyle"); 
 		// TStyle * plainStyle = gROOT->GetStyle("Plain");
 		// TStyle * customStyle = new TStyle(*plainStyle); 
@@ -86,7 +86,8 @@ namespace andi {  // everything is in a name space to structure it better
 
 		// Statbox
 		// http://root.cern.ch/root/html/TStyle.html#TStyle:SetOptStat@1
-		customStyle->SetOptStat("RouMe"); 
+		customStyle->SetOptStat("e"); 
+		if (showStats) customStyle->SetOptStat("RouMe"); 
 		customStyle->SetStatColor(kWhite);
 		customStyle->SetStatBorderSize(1);
 		customStyle->SetStatX(1-0.04);
@@ -127,6 +128,26 @@ namespace andi {  // everything is in a name space to structure it better
 		stats->SetY2NDC(oldValue2 - moveDown);
 	}
 	/**
+	 * @brief Shrinks a statbox, keeping its aspect ratio. length_new = factor * length_old.
+	 * @details Shrinks both the width as well as the height to factor*oldvalue. So, e.g., use 0.8 to shrink your statbox to a 80% side length in relation to the original side length.
+	 * 
+	 * @param hist Histogram containing the statbox
+	 * @param xShrinkFactor Factor of shrinkage: length_new = factor * length_old
+	 */
+	void shrinkStatBox(TH1 * hist, float xShrinkFactor) {
+		TPaveStats * stats = (TPaveStats *)hist->GetListOfFunctions()->FindObject("stats");
+		float length = stats->GetX2NDC() - stats->GetX1NDC();
+		float height = stats->GetY2NDC() - stats->GetY1NDC();
+		float ratio = height / length;
+		float newLength = length * xShrinkFactor;
+		float newHeight = ratio * newLength;
+
+		float newY1 = stats->GetY2NDC() - newHeight;
+		float newX1 = stats->GetX2NDC() - newLength;
+		stats->SetY1NDC(newY1);
+		stats->SetX1NDC(newX1);
+	}
+	/**
 	 * @brief A box with the histogram's title
 	 * @details Puts the title of a histogram into a box, formats it and returns it
 	 * 
@@ -137,7 +158,7 @@ namespace andi {  // everything is in a name space to structure it better
 	 */
 	TPaveText * makePadTitle(TH1 * hist, double rightBorder = 0.96) {
 		// canvas->SetTopMargin(0.075);
-		TPaveText *pt = new TPaveText(0.1, 0.93, rightBorder, 0.99, "NDC");
+		TPaveText *pt = new TPaveText(0.16, 0.932, rightBorder, 0.99, "NDC");
 		TString histName(hist->GetName()), histTitle(hist->GetTitle());
 		pt->SetName("title" + histName);
 		pt->SetBorderSize(1);
@@ -166,7 +187,7 @@ namespace andi {  // everything is in a name space to structure it better
 	void makePadTitleAndDraw(TH2 * hist, TPad * pad) {  // You probably need to cast your pad to (TPad *), because they usually return a more abstract TVirtualPad
 		pad->SetRightMargin(0.08);
 		gPad->Update();
-		TPaveText * pt = makePadTitle((TH1D *)hist, 1-0.08);
+		TPaveText * pt = makePadTitle((TH1D *)hist, 1 - 0.08);
 		TPaletteAxis * palette = (TPaletteAxis*)hist->GetListOfFunctions()->FindObject("palette");
 		palette->SetX2NDC(0.95);
 		// palette->SetLabelSize(0.03);
