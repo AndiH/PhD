@@ -107,12 +107,26 @@ namespace andi {  // everything is in a name space to structure it better
 	 * @param hist Pointer to histogram with statbox inside
 	 * @param moveToLeft Percentage of how much to move it left. Negative numbers to move it right.
 	 */
+	void moveTPaveLeft(TPave * pave, float moveToLeft = 0) {
+		// gPad->Update();
+		float oldValue1 = pave->GetX1NDC();
+		float oldValue2 = pave->GetX2NDC();
+		pave->SetX1NDC(oldValue1 - moveToLeft);
+		pave->SetX2NDC(oldValue2 - moveToLeft);
+		// gPad->Modified();
+		// gPad->Update();
+	}
 	void moveStatBoxLeft(TH1 * hist, float moveToLeft = 0) {
 		TPaveStats * stats = (TPaveStats *)hist->GetListOfFunctions()->FindObject("stats");
-		float oldValue1 = stats->GetX1NDC();
-		float oldValue2 = stats->GetX2NDC();
-		stats->SetX1NDC(oldValue1 - moveToLeft);
-		stats->SetX2NDC(oldValue2 - moveToLeft);
+		// float oldValue1 = stats->GetX1NDC();
+		// float oldValue2 = stats->GetX2NDC();
+		// stats->SetX1NDC(oldValue1 - moveToLeft);
+		// stats->SetX2NDC(oldValue2 - moveToLeft);
+		moveTPaveLeft((TPave *)stats, moveToLeft);
+	}
+	void moveZAxisLeft(TH2 * hist, float moveToLeft = 0) {
+		TPaletteAxis * axis = (TPaletteAxis *)hist->GetListOfFunctions()->FindObject("palette");
+		moveTPaveLeft((TPave *)axis, moveToLeft);
 	}
 	/**
 	 * @brief Moves a statbox down
@@ -194,6 +208,22 @@ namespace andi {  // everything is in a name space to structure it better
 		moveStatBoxLeft(hist, 0.04);
 
 		pt->Draw();
+	}
+	/**
+	 * @brief Draws a histogram's title at default position and moves statbox and z axis for LARGE datasets
+	 * @details Draws title and moves pad's right margin, the statbox and the z axis to the left. For large datasets, where the numbers on z have four (five?) digits.
+	 * 
+	 * @param hist Pointer to histogram (2D)
+	 * @param canvas Pointer to canvas where it's drawn upon, needed for margin movement (probably something like (TPad*)c1->GetPad(0))
+	 */
+	void makePadTitleAndDrawLarge(TH2 * hist, TPad * pad) {
+		pad->SetRightMargin(0.15);
+		gPad->Update();
+		andi::makePadTitle((TH1 *)hist, 1 - 0.1)->Draw();
+		andi::moveStatBoxLeft((TH1 *)hist, 0.11);
+		andi::moveZAxisLeft(hist, 0.10);
+		andi::shrinkStatBox((TH1*)hist, 0.8);
+		gPad->Update();
 	}
 	/**
 	 * @brief Saves a canvas in three vector image formats plus root file
