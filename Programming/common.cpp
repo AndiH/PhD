@@ -102,10 +102,11 @@ namespace andi {  // everything is in a name space to structure it better
 	}
 
 	/**
-	 * @brief Moves a statbox to the left
+	 * @brief Abstract method for moving any statbox left
+	 * @details Is used by moveStatBoxLeft and moveZAxisLeft to move stuff left
 	 * 
-	 * @param hist Pointer to histogram with statbox inside
-	 * @param moveToLeft Percentage of how much to move it left. Negative numbers to move it right.
+	 * @param pave Pointer to TPave to be moved
+	 * @param moveToLeft Value, the box should be moved left. In NDC.
 	 */
 	void moveTPaveLeft(TPave * pave, float moveToLeft = 0) {
 		// gPad->Update();
@@ -116,14 +117,23 @@ namespace andi {  // everything is in a name space to structure it better
 		// gPad->Modified();
 		// gPad->Update();
 	}
+	/**
+	 * @brief Moves a statbox to the left
+	 * 
+	 * @param hist Pointer to histogram with statbox inside
+	 * @param moveToLeft Percentage of how much to move it left. Negative numbers to move it right.
+	 */
 	void moveStatBoxLeft(TH1 * hist, float moveToLeft = 0) {
 		TPaveStats * stats = (TPaveStats *)hist->GetListOfFunctions()->FindObject("stats");
-		// float oldValue1 = stats->GetX1NDC();
-		// float oldValue2 = stats->GetX2NDC();
-		// stats->SetX1NDC(oldValue1 - moveToLeft);
-		// stats->SetX2NDC(oldValue2 - moveToLeft);
 		moveTPaveLeft((TPave *)stats, moveToLeft);
 	}
+	/**
+	 * @brief Moves a Z axis left
+	 * @details Ever got the problem that your z axis is too far to the right so that the numbers are not displayed correctly? Fear not, for there is this method.
+	 * 
+	 * @param hist Point to histogram containing Z axis. It's a TH2 as only those should have a z axis
+	 * @param moveToLeft The amount to be moved left. In NDC.
+	 */
 	void moveZAxisLeft(TH2 * hist, float moveToLeft = 0) {
 		TPaletteAxis * axis = (TPaletteAxis *)hist->GetListOfFunctions()->FindObject("palette");
 		moveTPaveLeft((TPave *)axis, moveToLeft);
@@ -150,16 +160,27 @@ namespace andi {  // everything is in a name space to structure it better
 	 */
 	void shrinkStatBox(TH1 * hist, float xShrinkFactor) {
 		TPaveStats * stats = (TPaveStats *)hist->GetListOfFunctions()->FindObject("stats");
-		float length = stats->GetX2NDC() - stats->GetX1NDC();
-		float height = stats->GetY2NDC() - stats->GetY1NDC();
+		shrinkBox(stats, xShrinkFactor);
+
+	}
+	/**
+	 * @brief Abstract class for shrinking boxes
+	 * @details Shrinks boxes by manipulating the lower left corner. Is used by shrinkStatBox.
+	 * 
+	 * @param box A TPave box.
+	 * @param xShrinkFactor The shrinkage factor.
+	 */
+	void shrinkBox(TPave * box, float xShrinkFactor) {
+		float length = box->GetX2NDC() - box->GetX1NDC();
+		float height = box->GetY2NDC() - box->GetY1NDC();
 		float ratio = height / length;
 		float newLength = length * xShrinkFactor;
 		float newHeight = ratio * newLength;
 
-		float newY1 = stats->GetY2NDC() - newHeight;
-		float newX1 = stats->GetX2NDC() - newLength;
-		stats->SetY1NDC(newY1);
-		stats->SetX1NDC(newX1);
+		float newY1 = box->GetY2NDC() - newHeight;
+		float newX1 = box->GetX2NDC() - newLength;
+		box->SetY1NDC(newY1);
+		box->SetX1NDC(newX1);
 	}
 	/**
 	 * @brief A box with the histogram's title
@@ -210,7 +231,7 @@ namespace andi {  // everything is in a name space to structure it better
 		pt->Draw();
 	}
 	/**
-	 * @brief Draws a histogram's title at default position and moves statbox and z axis for LARGE datasets
+	 * @brief Draws a histogram's title at default position and moves statbox and z axis for LARGE datasets (= long numbers on Z)
 	 * @details Draws title and moves pad's right margin, the statbox and the z axis to the left. For large datasets, where the numbers on z have four (five?) digits.
 	 * 
 	 * @param hist Pointer to histogram (2D)
@@ -263,6 +284,36 @@ namespace andi {  // everything is in a name space to structure it better
 		filename.ReplaceAll(" ", "_");
 		if (macroPrefix != "") filename = macroPrefix + "--" + filename;
 		saveCanvas_allFileNames(canvas, filename);
+	}
+	/**
+	 * @brief Draws a (1D) histogram onto a canvas, makes the title and saves it (optionally)
+	 * @details This few lines is the overhead I'm using all day, so I made this function. The canvas name is chosen as per the histogram name, with my convention (histograms start with a h, the according canvas is the same name, but with a c in front). There are some optional arguments
+	 * 
+	 * @param h Pointer to 1D histogram
+	 * @param filename The title of the canvas, also the name the images will be saved with
+	 * @param basename The basename for andi::saveCanvas, a prefix for all the images
+	 * @param save Should files be saved? Slows everything down, hence an option
+	 * @param fit Should there be a Gaussian fit?
+	 * @return TCanvas point. You dont need to use it, but if you want, whoops, here it is.
+	 */
+	TCanvas * createCanvasDrawAndSave(TH1 * h, TString filename, TString basename, bool save = true, bool fit = false) {
+		TString canvasTitle = h->GetTitle();
+		canvasTitle.Remove(0, 1);
+		canvasTitle.Prepend("c");
+		TCanvas * c = new TCanvas(canvasTitle, filename, 0, 0, 800, 500);
+		h->Draw("HIST");
+		if (fit) {
+			TF1 * gf = andi::gaussFit(h, true);
+			gf->Draw("SAME");
+		}
+		andi::makePadTitleAndDraw(h);
+		if (save) andi::saveCanvas(c, basename);
+	}
+	/**
+	 * @brief See andi::createCanvasDrawAndSave, but this version with default fitting enabled
+	 */
+	TCanvas * createCanvasFitDrawAndSave(TH1 * h, TString filename, TString basename, bool save = true, bool fit = true) {
+		createCanvasDrawAndSave(h, filename, basename, save, true);
 	}
 	/**
 	 * @brief Creates a legend at my favorite position, formats it
