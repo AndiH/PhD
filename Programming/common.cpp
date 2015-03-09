@@ -24,6 +24,7 @@
 
 #include "TH1.h"
 #include "TH2.h"
+#include "THStack.h"
 #include "TF1.h"
 
 namespace andi {  // everything is in a name space to structure it better
@@ -138,6 +139,12 @@ namespace andi {  // everything is in a name space to structure it better
 		TPaletteAxis * axis = (TPaletteAxis *)hist->GetListOfFunctions()->FindObject("palette");
 		moveTPaveLeft((TPave *)axis, moveToLeft);
 	}
+	void moveTPaveDown(TPave * pave, float moveDown = 0) {
+		float oldValue1 = pave->GetY1NDC();
+		float oldValue2 = pave->GetY2NDC();
+		pave->SetY1NDC(oldValue1 - moveDown);
+		pave->SetY2NDC(oldValue2 - moveDown);
+	}
 	/**
 	 * @brief Moves a statbox down
 	 * 
@@ -146,22 +153,11 @@ namespace andi {  // everything is in a name space to structure it better
 	 */
 	void moveStatBoxDown(TH1 * hist, float moveDown = 0) {
 		TPaveStats * stats = (TPaveStats *)hist->GetListOfFunctions()->FindObject("stats");
-		float oldValue1 = stats->GetY1NDC();
-		float oldValue2 = stats->GetY2NDC();
-		stats->SetY1NDC(oldValue1 - moveDown);
-		stats->SetY2NDC(oldValue2 - moveDown);
-	}
-	/**
-	 * @brief Shrinks a statbox, keeping its aspect ratio. length_new = factor * length_old.
-	 * @details Shrinks both the width as well as the height to factor*oldvalue. So, e.g., use 0.8 to shrink your statbox to a 80% side length in relation to the original side length.
-	 * 
-	 * @param hist Histogram containing the statbox
-	 * @param xShrinkFactor Factor of shrinkage: length_new = factor * length_old
-	 */
-	void shrinkStatBox(TH1 * hist, float xShrinkFactor) {
-		TPaveStats * stats = (TPaveStats *)hist->GetListOfFunctions()->FindObject("stats");
-		shrinkBox(stats, xShrinkFactor);
-
+		moveTPaveDown((TPave*) stats, moveDown);
+		// float oldValue1 = stats->GetY1NDC();
+		// float oldValue2 = stats->GetY2NDC();
+		// stats->SetY1NDC(oldValue1 - moveDown);
+		// stats->SetY2NDC(oldValue2 - moveDown);
 	}
 	/**
 	 * @brief Abstract class for shrinking boxes
@@ -181,6 +177,18 @@ namespace andi {  // everything is in a name space to structure it better
 		float newX1 = box->GetX2NDC() - newLength;
 		box->SetY1NDC(newY1);
 		box->SetX1NDC(newX1);
+	}
+	/**
+	 * @brief Shrinks a statbox, keeping its aspect ratio. length_new = factor * length_old.
+	 * @details Shrinks both the width as well as the height to factor*oldvalue. So, e.g., use 0.8 to shrink your statbox to a 80% side length in relation to the original side length.
+	 * 
+	 * @param hist Histogram containing the statbox
+	 * @param xShrinkFactor Factor of shrinkage: length_new = factor * length_old
+	 */
+	void shrinkStatBox(TH1 * hist, float xShrinkFactor) {
+		TPaveStats * stats = (TPaveStats *)hist->GetListOfFunctions()->FindObject("stats");
+		shrinkBox(stats, xShrinkFactor);
+
 	}
 	/**
 	 * @brief A box with the histogram's title
@@ -203,6 +211,19 @@ namespace andi {  // everything is in a name space to structure it better
 		pt->AddText(histTitle);
 		return pt;
 	}
+	TPaveText * makePadTitle(TObject * obj, double rightBorder = 0.96) {
+		// canvas->SetTopMargin(0.075);
+		TPaveText *pt = new TPaveText(0.16, 0.932, rightBorder, 0.99, "NDC");
+		TString objName(obj->GetName()), objTitle(obj->GetTitle());
+		pt->SetName("title" + objName);
+		pt->SetBorderSize(1);
+		pt->SetFillColor(0);
+		pt->SetTextSize(0.04);
+		pt->SetBorderSize(0);
+		pt->AddText(objTitle);
+		return pt;
+	}
+
 	/**
 	 * @brief Draws a histogram's title at default position
 	 * 
@@ -210,6 +231,10 @@ namespace andi {  // everything is in a name space to structure it better
 	 */
 	void makePadTitleAndDraw(TH1 * hist) {
 		TPaveText *pt = makePadTitle(hist);
+		pt->Draw();
+	}
+	void makePadTitleAndDraw(TObject * obj) {
+		TPaveText *pt = makePadTitle(obj);
 		pt->Draw();
 	}
 	/**
@@ -286,36 +311,6 @@ namespace andi {  // everything is in a name space to structure it better
 		saveCanvas_allFileNames(canvas, filename);
 	}
 	/**
-	 * @brief Draws a (1D) histogram onto a canvas, makes the title and saves it (optionally)
-	 * @details This few lines is the overhead I'm using all day, so I made this function. The canvas name is chosen as per the histogram name, with my convention (histograms start with a h, the according canvas is the same name, but with a c in front). There are some optional arguments
-	 * 
-	 * @param h Pointer to 1D histogram
-	 * @param filename The title of the canvas, also the name the images will be saved with
-	 * @param basename The basename for andi::saveCanvas, a prefix for all the images
-	 * @param save Should files be saved? Slows everything down, hence an option
-	 * @param fit Should there be a Gaussian fit?
-	 * @return TCanvas point. You dont need to use it, but if you want, whoops, here it is.
-	 */
-	TCanvas * createCanvasDrawAndSave(TH1 * h, TString filename, TString basename, bool save = true, bool fit = false) {
-		TString canvasTitle = h->GetTitle();
-		canvasTitle.Remove(0, 1);
-		canvasTitle.Prepend("c");
-		TCanvas * c = new TCanvas(canvasTitle, filename, 0, 0, 800, 500);
-		h->Draw("HIST");
-		if (fit) {
-			TF1 * gf = andi::gaussFit(h, true);
-			gf->Draw("SAME");
-		}
-		andi::makePadTitleAndDraw(h);
-		if (save) andi::saveCanvas(c, basename);
-	}
-	/**
-	 * @brief See andi::createCanvasDrawAndSave, but this version with default fitting enabled
-	 */
-	TCanvas * createCanvasFitDrawAndSave(TH1 * h, TString filename, TString basename, bool save = true, bool fit = true) {
-		createCanvasDrawAndSave(h, filename, basename, save, true);
-	}
-	/**
 	 * @brief Creates a legend at my favorite position, formats it
 	 * @details Just a wrapper around the TLegend constructor to already have it configured with text size, background color etc.
 	 * 
@@ -333,6 +328,39 @@ namespace andi {  // everything is in a name space to structure it better
 		legend->SetBorderSize(1);
 		return legend;
 	}
+	THStack * histogramsToStack(TObjArray * histos, TString stackAddOption = "") {
+		THStack * myStack = new THStack();
+		int nHistograms = histos->GetEntries();
+		TH1D * firstHist;
+		for (int i = 0; i < nHistograms; i++) {
+			myStack->Add((TH1D*)(histos->At(i)), stackAddOption);
+			if (i == 0) firstHist = (TH1D*)(histos->At(0));
+		}
+		TString name(firstHist->GetName());
+		name.Remove(0, 1);
+		name.Prepend("st");
+		myStack->SetName(name);
+		myStack->SetTitle(firstHist->GetTitle());
+		myStack->Draw("goff");
+		myStack->GetXaxis()->SetTitle(firstHist->GetXaxis()->GetTitle());
+		myStack->GetYaxis()->SetTitle(firstHist->GetYaxis()->GetTitle());
+
+		return myStack;
+	}
+
+	TLegend * stackLegend(THStack * stack, TString header = "Histograms", double height = 0.75, double width = 0.7) {
+		TLegend * tempLegend = andi::plainLegend(width, height, 0.96, 0.93);
+		tempLegend->SetHeader(header);
+		int nHists = stack->GetHists()->GetEntries();
+		for (int i = 0; i < nHists; i++) {
+			tempLegend->AddEntry(stack->GetHists()->At(i), stack->GetHists()->At(i)->GetTitle(), "LPF");
+		}
+		tempLegend->SetTextFont(62);
+		tempLegend->SetTextSize(0.038);  // empirically found
+
+		return tempLegend;
+	}
+
 	/**
 	 * @brief Fits a gaussian to a histogram
 	 * @details Fits a gaussian to the whole range of a histogram, formats the function and returns it. If verbose, it also prints out some information on it
@@ -357,7 +385,47 @@ namespace andi {  // everything is in a name space to structure it better
 		myfunc->SetLineStyle(2);
 		return myfunc;
 	}
-
+	/**
+	 * @brief Draws a (1D) histogram onto a canvas, makes the title and saves it (optionally)
+	 * @details This few lines is the overhead I'm using all day, so I made this function. The canvas name is chosen as per the histogram name, with my convention (histograms start with a h, the according canvas is the same name, but with a c in front). There are some optional arguments
+	 * 
+	 * @param h Pointer to 1D histogram
+	 * @param filename The title of the canvas, also the name the images will be saved with
+	 * @param basename The basename for andi::saveCanvas, a prefix for all the images
+	 * @param save Should files be saved? Slows everything down, hence an option
+	 * @param fit Should there be a Gaussian fit?
+	 * @return TCanvas point. You dont need to use it, but if you want, whoops, here it is.
+	 */
+	TCanvas * createCanvasDrawAndSave(TH1 * h, TString filename, TString basename, bool save = true, bool fit = false) {
+		TString canvasName = h->GetName();
+		canvasName.Remove(0, 1);
+		canvasName.Prepend("c");
+		TCanvas * c = new TCanvas(canvasName, filename, 0, 0, 800, 500);
+		h->Draw("HIST");
+		if (fit) {
+			TF1 * gf = gaussFit(h, true);
+			gf->Draw("SAME");
+		}
+		andi::makePadTitleAndDraw(h);
+		if (save) andi::saveCanvas(c, basename);
+		return c;
+	}
+	/**
+	 * @brief See andi::createCanvasDrawAndSave, but this version with default fitting enabled
+	 */
+	TCanvas * createCanvasFitDrawAndSave(TH1 * h, TString filename, TString basename, bool save = true, bool fit = true) {
+		return createCanvasDrawAndSave(h, filename, basename, save, true);
+	}
+	TCanvas * createCanvasDrawAndSave(TH2 * h, TString filename, TString basename, bool save = true) {
+		TString canvasName = h->GetName();
+		canvasName.Remove(0, 1);
+		canvasName.Prepend("c");
+		TCanvas * c = new TCanvas(canvasName, filename, 0, 0, 800, 500);
+		h->Draw("COLz");
+		andi::makePadTitleAndDraw(h, (TPad*) c->GetPad(0));
+		if (save) andi::saveCanvas(c, basename);
+		return c;
+	}
 	// Following functions are for my specific analysis
 	/**
 	 * @brief The properties of a particle
