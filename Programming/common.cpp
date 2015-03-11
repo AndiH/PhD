@@ -440,6 +440,22 @@ namespace andi {  // everything is in a name space to structure it better
 		if (save) andi::saveCanvas(c, basename);
 		return c;
 	}
+	/**
+	 * @brief Reads in a Tree from multiple Files
+	 * @details For data collections of the same structure it is possible to append the trees after one another. This functions gives a convenient way to do so. The fileName parameter should point to a text file with the file name of a root file per line. The function returns a TTree with combined content.
+	 * 
+	 * @param treeName Name of the tree in every file. Has to be equal.
+	 * @param fileName A text file with one file per line.
+	 * 
+	 * @return TTree of a chain of input files. The intermediate TChain is casted to a TTree, because of my macros.
+	 */
+	TTree * treeFromMultipleFiles(TString treeName, TString fileName) {
+		TChain * tempChain = new TChain(treeName);
+		TFileCollection collection("somename", "", fileName);
+		tempChain->AddFileInfoList(collection.GetList());
+		return (TTree*) tempChain;
+	}
+
 	// Following functions are for my specific analysis
 	/**
 	 * @brief The properties of a particle
