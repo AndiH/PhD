@@ -426,6 +426,20 @@ namespace andi {  // everything is in a name space to structure it better
 		if (save) andi::saveCanvas(c, basename);
 		return c;
 	}
+	TCanvas * createCanvasDrawAndSave(THStack * stack, TString filename, TString basename, bool save = true) {
+		TString canvasName = stack->GetName();
+		canvasName.Remove(0, 1);
+		canvasName.Prepend("c");
+		TCanvas * c = new TCanvas(canvasName, filename, 0, 0, 800, 500);
+		// stack->SetStats(kFALSE);
+		stack->GetHistogram()->SetStats(false);
+		stack->Draw("NOSTACK");
+		andi::makePadTitleAndDraw((TH1*)stack);
+		TLegend * leg = andi::stackLegend(stack, "Histograms", 0.7);
+		leg->Draw();
+		if (save) andi::saveCanvas(c, basename);
+		return c;
+	}
 	// Following functions are for my specific analysis
 	/**
 	 * @brief The properties of a particle
