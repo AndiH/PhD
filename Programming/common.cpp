@@ -26,6 +26,7 @@
 #include "TH2.h"
 #include "THStack.h"
 #include "TF1.h"
+#include "tableau_colors.cpp"
 
 namespace andi {  // everything is in a name space to structure it better
 
@@ -126,7 +127,7 @@ namespace andi {  // everything is in a name space to structure it better
 	 */
 	void moveStatBoxLeft(TH1 * hist, float moveToLeft = 0) {
 		TPaveStats * stats = (TPaveStats *)hist->GetListOfFunctions()->FindObject("stats");
-		moveTPaveLeft((TPave *)stats, moveToLeft);
+		if (stats != NULL) moveTPaveLeft((TPave *)stats, moveToLeft);
 	}
 	/**
 	 * @brief Moves a Z axis left
@@ -348,8 +349,10 @@ namespace andi {  // everything is in a name space to structure it better
 		return myStack;
 	}
 
-	TLegend * stackLegend(THStack * stack, TString header = "Histograms", double height = 0.75, double width = 0.7) {
-		TLegend * tempLegend = andi::plainLegend(width, height, 0.96, 0.93);
+	// TLegend * stackLegend(THStack * stack, TString header = "Histograms", TLegend * baseLegend) 
+
+	TLegend * stackLegend(THStack * stack, TString header = "Histograms", double height = 0.75, double width = 0.7, double y2 = 0.93) {
+		TLegend * tempLegend = andi::plainLegend(width, height, 0.96, y2);
 		tempLegend->SetHeader(header);
 		int nHists = stack->GetHists()->GetEntries();
 		for (int i = 0; i < nHists; i++) {
@@ -380,10 +383,98 @@ namespace andi {  // everything is in a name space to structure it better
 			std::cout << "  mean = " << myfunc->GetParameter(1) << " pm " << myfunc->GetParError(1) << std::endl;
 			std::cout << "  sigma = " << myfunc->GetParameter(2) << " pm " << myfunc->GetParError(1) << std::endl;
 		}		
-		myfunc->SetLineColor(hist->GetLineColor() - 5);
+		myfunc->SetLineColor(hist->GetLineColor());
 		myfunc->SetLineWidth(hist->GetLineWidth());
 		myfunc->SetLineStyle(2);
 		return myfunc;
+	}
+	/**
+	 * @brief Function for fitting a sum of two Gaussians (not coupled)
+	 * @details Fits the sum of two Gaussian distributions on a histogram. Can try to determine the ranges automatically by pre-fitting two individual Gaussians in, each, +- 10 percent of the center (inner), and +- 80 percent of the center (outer). Or, ranges of the inner and outer fits can be given. There's a dedicated function to specify the parameters of the double Gaussian fit manually, which is also called by this function.
+	 * 
+	 * @param hist Histogram with the data to fit to
+	 * @param verbose Print fitting parameters
+	 * @param useAutoRange Defined the ranges of the pre-fits automatically to be 10% and 80% around zero
+	 * @param innerRangeMax The positive half of the range of the inner Gauss pre-fit
+	 * @param outerRange The positive half of the range of the outer Gauss pre-fit. For non-zero-centered histograms, please use the manual function
+	 * @return A TF1 with a double Gaussian. First three parameters are the parameters of the inner Gaussian, second set of three parameters are those of the outer.
+	 */
+	TF1 * doubleGaussFit(TH1 * hist, bool verbose = false, bool useAutoRange = true, double innerRangeMax = 0.05, double outerRangeMax = 0.3) {
+		Double_t parameters[6] = {0, 0, 0, 0, 0, 0};
+		gStyle->SetOptFit(1);
+		if (useAutoRange) {
+			innerRangeMax = hist->GetXaxis()->GetXmax() / 10;
+			outerRangeMax = innerRangeMax * 8;
+		}
+		TF1 * fitPre1 = new TF1("fitPre1", "gaus", -innerRangeMax, innerRangeMax);
+		hist->Fit(fitPre1, "Q0R");
+		fitPre1->GetParameters(&parameters[0]);
+std::cout << parameters[0] << ", " << parameters[3] << std::endl;
+		TF1 * fitPre2 = new TF1("fitPre2", "gaus", -outerRangeMax, outerRangeMax);
+		hist->Fit(fitPre2, "Q0R");
+		fitPre2->GetParameters(&parameters[3]);
+std::cout << parameters[0] << ", " << parameters[3] << std::endl;
+		// startParameters = &parameters;
+		return doubleGaussFit(hist, verbose, outerRange, parameters);
+
+	}
+	/**
+	 * @brief Function for fitting a sum of two Gaussians (not coupled), providing the fit parameters
+	 * @details The manual version to the other function. Expects a double pointer as last argument, pointing to six pre-fit parameters from where to start the fitting minimization.
+	 * 
+	 * @param hist Histogram with data
+	 * @param verbose Print fit information
+	 * @param outerRange The range of the double Gaussian histogram to fit stuff
+	 * @param startParameters An array of six values from where to start the minimization
+	 * @return Pointer to TF1 with two Gaussians. See description of other function.
+	 */
+	TF1 * doubleGaussFit(TH1 * hist, bool verbose, double outerRange, double * startParameters) {
+		TF1 * fitProper = new TF1("fitProper", "gaus(0)+gaus(3)", -outerRange, outerRange);
+		fitProper->SetParameters(startParameters);
+		fitProper->SetParName(0, "Const (inner)");
+		fitProper->SetParName(1, "Mean (inner)");
+		fitProper->SetParName(2, "Sigma (inner)");
+		fitProper->SetParName(3, "Const (outer)");
+		fitProper->SetParName(4, "Mean (outer)");
+		fitProper->SetParName(5, "Sigma (outer)");
+
+		hist->Fit(fitProper, "Q0R");
+		if (verbose) {
+			std::cout << "Gauss fit to " << hist->GetTitle() << " (" << hist->GetName() << ")" << std::endl;
+			std::cout << "  X^2 / NDF = " << fitProper->GetChisquare() << "/" << fitProper->GetNDF() << " = " << fitProper->GetChisquare()/fitProper->GetNDF() << std::endl;
+			std::cout << "  mean (inner) = " << fitProper->GetParameter(1) << " pm " << fitProper->GetParError(1) << std::endl;
+			std::cout << "  sigma (inner) = " << fitProper->GetParameter(2) << " pm " << fitProper->GetParError(1) << std::endl;
+			std::cout << "  mean (outer) = " << fitProper->GetParameter(4) << " pm " << fitProper->GetParError(4) << std::endl;
+			std::cout << "  sigma (outer) = " << fitProper->GetParameter(5) << " pm " << fitProper->GetParError(5) << std::endl;
+		}	
+
+		// fitProper->GetParameters(&parameters[0]);
+		fitProper->SetLineColor(hist->GetLineColor());
+		fitProper->SetLineWidth(hist->GetLineWidth());
+		fitProper->SetLineStyle(2);
+		std::cout << fitProper->GetParameter(1) << std::endl;
+
+		return fitProper;
+	}
+	/**
+	 * @brief Helper function for double Gaussian function. Converts the double Gaussian into the two single Gaussians it is built from.
+	 * @details 
+	 * 
+	 * @param funcGaus A pointer to a double Gaussian function
+	 * @return A pair of pointers to the functions, the Gaussian is built from.
+	 */
+	std::pair<TF1 *, TF1 * > doubleGaussToTwoGauss(TF1* funcGaus) {
+		Double_t parameters[6] = {-1, -1, -1, -1, -1, -1};
+		funcGaus->GetParameters(&parameters[0]);
+		double rangeStart, rangeEnd;
+		funcGaus->GetRange(rangeStart, rangeEnd);
+
+		TF1 * firstGaus = new TF1("firstGaus", "gaus", rangeStart, rangeEnd);
+		firstGaus->SetParameters(parameters[0], parameters[1], parameters[2]);
+		TF1 * secondGaus = new TF1("secondGaus", "gaus", rangeStart, rangeEnd);
+		secondGaus->SetParameters(parameters[3], parameters[4], parameters[5]);
+
+		return std::make_pair(firstGaus, secondGaus);
 	}
 	/**
 	 * @brief Draws a (1D) histogram onto a canvas, makes the title and saves it (optionally)
@@ -426,7 +517,7 @@ namespace andi {  // everything is in a name space to structure it better
 		if (save) andi::saveCanvas(c, basename);
 		return c;
 	}
-	TCanvas * createCanvasDrawAndSave(THStack * stack, TString filename, TString basename, bool save = true) {
+	TCanvas * createCanvasDrawAndSave(THStack * stack, TString filename, TString basename, bool save = true, TString stackTitle = "Histograms") {
 		TString canvasName = stack->GetName();
 		canvasName.Remove(0, 1);
 		canvasName.Prepend("c");
@@ -435,7 +526,7 @@ namespace andi {  // everything is in a name space to structure it better
 		stack->GetHistogram()->SetStats(false);
 		stack->Draw("NOSTACK");
 		andi::makePadTitleAndDraw((TH1*)stack);
-		TLegend * leg = andi::stackLegend(stack, "Histograms", 0.7);
+		TLegend * leg = andi::stackLegend(stack, stackTitle, 0.7);
 		leg->Draw();
 		if (save) andi::saveCanvas(c, basename);
 		return c;
