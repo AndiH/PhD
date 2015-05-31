@@ -1,11 +1,23 @@
 /**
- *  @file common.cpp
- *  @Author Andreas Herten (a.herten@gmail.com)
- *  @date 2014
- *  @brief Handy little functions for ROOT
- *  
- * This file holds all the common functions I wrote while working on stuff. 
- * Usually ROOT, sometimes C++. Use at own risk, participation welcome. 
+ * @file common.cpp
+ * @mainpage common.cpp Helper Functions
+ * @author Andreas Herten (a.herten@gmail.com)
+ * @date 2014/2015
+ * @brief Handy little functions for ROOT
+ * @details This file holds all the common functions I wrote while working on stuff. 
+ * Usually ROOT, sometimes C++.
+ *
+ * Although they are intended to be used from ROOT macros, they included the `#include`s to let it compile as well.
+ * 
+ * If you want to use the methods as well from ROOT's command line, make sure to include this file in your `~/.rootrc` file with
+ * ~~~
+ * Rint.Load: ~/Documents/Coding/PhysicsAnalysis/common.cpp
+ * ~~~
+ * See also [this link](https://github.com/AndiH/PhD/blob/master/Programming/.rootrc).
+ *
+ * Most of the content is put into a namespace, see @ref andi.
+ *
+ * Use at own risk, participation welcome. 
  * -Andreas
  */
 
@@ -28,11 +40,14 @@
 #include "TF1.h"
 #include "tableau_colors.cpp"
 
-namespace andi {  // everything is in a name space to structure it better
+/**
+ * @namespace andi A namespace to structure my things better
+ */
+namespace andi {
 	// some constants
-	double crossSig = 0.1; // mu barn
-	double crossBkg = 45737; // mu barn
-	double brSig = 0.0931;
+	double crossSig = 0.1; ///< Signal cross section, in mu barn
+	double crossBkg = 45737; ///< Background cross section, in mu barn
+	double brSig = 0.0931; ///< Brancing ratio D --> K π π 
 	/**
 	 * @brief Set my custom ROOT canvas style
 	 * @details Gets rid of the margins and sets some other stuff
@@ -107,8 +122,13 @@ namespace andi {  // everything is in a name space to structure it better
 	}
 
 	/**
-	 * @brief Abstract method for moving any statbox left
-	 * @details Is used by moveStatBoxLeft and moveZAxisLeft to move stuff left
+	 * @name MoveLeft
+	 * Methods for moving a box on the canvas **to the left**.
+	 * @{
+	 */
+	/**
+	 * @brief Abstract method for moving any TPave left
+	 * @details Is used by moveStatBoxLeft() and moveZAxisLeft() to move stuff left
 	 * 
 	 * @param pave Pointer to TPave to be moved
 	 * @param moveToLeft Value, the box should be moved left. In NDC.
@@ -119,8 +139,6 @@ namespace andi {  // everything is in a name space to structure it better
 		float oldValue2 = pave->GetX2NDC();
 		pave->SetX1NDC(oldValue1 - moveToLeft);
 		pave->SetX2NDC(oldValue2 - moveToLeft);
-		// gPad->Modified();
-		// gPad->Update();
 	}
 	/**
 	 * @brief Moves a statbox to the left
@@ -143,6 +161,22 @@ namespace andi {  // everything is in a name space to structure it better
 		TPaletteAxis * axis = (TPaletteAxis *)hist->GetListOfFunctions()->FindObject("palette");
 		moveTPaveLeft((TPave *)axis, moveToLeft);
 	}
+	/**
+	 *@}
+	 */
+
+	/**
+	 * @name MoveDown
+	 * Methods for moving a box on the canvas **down**.
+	 * @{
+	 */
+	/**
+	 * @brief Abstract method for moving any TPave down
+	 * @details Is used by moveStatBoxDown() to move stuff down
+	 * 
+	 * @param pave Pointer to TPave to be moved
+	 * @param moveDown Value, the box should be moved down. In NDC.
+	 */
 	void moveTPaveDown(TPave * pave, float moveDown = 0) {
 		float oldValue1 = pave->GetY1NDC();
 		float oldValue2 = pave->GetY2NDC();
@@ -164,8 +198,17 @@ namespace andi {  // everything is in a name space to structure it better
 		// stats->SetY2NDC(oldValue2 - moveDown);
 	}
 	/**
+	 * @}
+	 */
+
+	/**
+	 * @name ShrinkBox
+	 * Methods for shrinking a box.
+	 * @{
+	 */
+	/**
 	 * @brief Abstract class for shrinking boxes
-	 * @details Shrinks boxes by manipulating the lower left corner. Is used by shrinkStatBox.
+	 * @details Shrinks boxes by manipulating the lower left corner. Is used by shrinkStatBox().
 	 * 
 	 * @param box A TPave box.
 	 * @param xShrinkFactor The shrinkage factor.
@@ -195,29 +238,24 @@ namespace andi {  // everything is in a name space to structure it better
 
 	}
 	/**
-	 * @brief A box with the histogram's title
-	 * @details Puts the title of a histogram into a box, formats it and returns it
+	 * @}
+	 */
+
+	/**
+	 * @name Pad Titles
+	 * @{
+	 */
+	/**
+	 * @brief Create a box with the TObject's title
+	 * @details Puts the title of a histogram into a box, formats it and returns it.
+	 *
+	 * The box is placed on top of the histogram, at the usual position.
 	 * 
 	 * @param hist Pointer to histogram with title info inside
 	 * @param rightBorder Right border of where the box should end
 	 * 
 	 * @return pointer to a TPaveText
 	 */
-	TPaveText * makePadTitle(TH1 * hist, double rightBorder = 0.96) {
-		// canvas->SetTopMargin(0.075);
-		TPaveText *pt = new TPaveText(0.16, 0.932, rightBorder, 0.99, "NDC");
-		TString histName(hist->GetName()), histTitle(hist->GetTitle());
-		pt->SetName("title" + histName);
-		pt->SetBorderSize(1);
-		pt->SetFillColor(0);
-		pt->SetTextSize(0.04);
-		pt->SetBorderSize(0);
-		pt->AddText(histTitle);
-		return pt;
-	}
-	/**
-	 * @brief TObject version of the last one
-	 **/
 	TPaveText * makePadTitle(TObject * obj, double rightBorder = 0.96) {
 		// canvas->SetTopMargin(0.075);
 		TPaveText *pt = new TPaveText(0.16, 0.932, rightBorder, 0.99, "NDC");
@@ -232,21 +270,19 @@ namespace andi {  // everything is in a name space to structure it better
 	}
 
 	/**
-	 * @brief Draws a histogram's title at default position
+	 * @brief Draws an objects's title at default position. Convenience function for makePadTitle().
 	 * 
-	 * @param hist Pointer to histogram (1D)
+	 * @param hist Pointer to TObject (e.g. TH1)
 	 */
-	void makePadTitleAndDraw(TH1 * hist) {
-		TPaveText *pt = makePadTitle(hist);
-		pt->Draw();
-	}
 	void makePadTitleAndDraw(TObject * obj) {
 		TPaveText *pt = makePadTitle(obj);
 		pt->Draw();
 	}
 	/**
-	 * @brief Draws a histogram's title at default position
-	 * @details Draws title and also moves the right pad's border a bit to the left to make space for z axis
+	 * @brief Draws a **2D** histogram's title at default position
+	 * @details Draws title and also moves the right pad's border a bit to the left to make space for z axis.
+	 *
+	 * You probably need to cast your pad to a `(TPad *)` - the last argument. E.g. `(TPad *) c1->GetPad(0)`.
 	 * 
 	 * @param hist Pointer to histogram (2D)
 	 * @param canvas Pointer to canvas where it's drawn upon, needed for margin movement
@@ -263,11 +299,11 @@ namespace andi {  // everything is in a name space to structure it better
 		pt->Draw();
 	}
 	/**
-	 * @brief Draws a histogram's title at default position and moves statbox and z axis for LARGE datasets (= long numbers on Z)
+	 * @brief Draws a histogram's title at default position and moves statbox and z axis for **LARGE** datasets (= long numbers on Z)
 	 * @details Draws title and moves pad's right margin, the statbox and the z axis to the left. For large datasets, where the numbers on z have four (five?) digits.
 	 * 
 	 * @param hist Pointer to histogram (2D)
-	 * @param canvas Pointer to canvas where it's drawn upon, needed for margin movement (probably something like (TPad*)c1->GetPad(0))
+	 * @param canvas Pointer to canvas where it's drawn upon, needed for margin movement (probably something like `(TPad*)c1->GetPad(0))`
 	 */
 	void makePadTitleAndDrawLarge(TH2 * hist, TPad * pad) {
 		pad->SetRightMargin(0.15);
@@ -278,6 +314,13 @@ namespace andi {  // everything is in a name space to structure it better
 		andi::shrinkStatBox((TH1*)hist, 0.8);
 		gPad->Update();
 	}
+	/**
+	 * @}
+	 */
+	/**
+	 * @name Saving of Canvas
+	 * @{
+	 */
 	/**
 	 * @brief Saves a canvas in three vector image formats plus root file
 	 * @details Creates four files for a given canvas: SVG, PDF, EPS - and ROOT.
@@ -292,7 +335,7 @@ namespace andi {  // everything is in a name space to structure it better
 		canvas->SaveAs(name + ".root");
 	}
 	/**
-	 * @brief Saves a canvas in some file format at right locaiton
+	 * @brief Saves a canvas in some file format at right location
 	 * @details Will, in default call, save every canvas in four file extensions in img/BASENAME/FILENAME.{svg,pdf,eps,root}
 	 * 
 	 * @param canvas The canvas as it should be saved
@@ -309,7 +352,7 @@ namespace andi {  // everything is in a name space to structure it better
 		saveCanvas_allFileNames(canvas, basedir + filename);
 	}
 	/**
-	 * @brief Saves a canvas, no subdirectories
+	 * @brief Saves a canvas, no subdirectories; rest is equal as in saveCanvas()
 	 */
 	void saveCanvasFlat(TCanvas * canvas, TString macroPrefix = "") {
 		TString filename = canvas->GetTitle();
@@ -317,6 +360,9 @@ namespace andi {  // everything is in a name space to structure it better
 		if (macroPrefix != "") filename = macroPrefix + "--" + filename;
 		saveCanvas_allFileNames(canvas, filename);
 	}
+	/**
+	 * @}
+	 */
 	/**
 	 * @brief Creates a legend at my favorite position, formats it
 	 * @details Just a wrapper around the TLegend constructor to already have it configured with text size, background color etc.
@@ -336,8 +382,18 @@ namespace andi {  // everything is in a name space to structure it better
 		return legend;
 	}
 	/**
-	 * @brief Converts an array of histograms into a THStack
-	 * @details Gives the stack proper name, tile, and axes on the way, so it can be manipulated as a usual ROOT object (because usually, it can't, as the stuff is only defined after drawing)
+	 * @name Stack helper functions
+	 * @details Working with > 1 histogram at a time can become very cumbersome, if you're not using them in a THStack.
+	 * These helper functions here should make it easy to handle the stacks.
+	 * @{
+	 */
+	/**
+	 * @brief Converts an array of histograms (as `TObjArray`) into a THStack
+	 * @details Gives the stack proper name, tile, and axes on the way, so it can be manipulated as a usual ROOT object (because usually, it can't, as the stuff is only defined after drawing).
+	 *
+	 * The histograms are provided as a list in `TObjArray` to be more flexible and not deal with the overhead of more-complex constructors. At least for the time being the flexibilty is not made use of since only TH1D are used.
+	 *
+	 * For ROOT to generate axes, the histogram first needs to be drawn. In theory, `"goff"` should not print the canvas on your screen. Instead, a kind of empty canvas is drawn.
 	 * 
 	 * @param histos TObjArray with histograms. Take care of the order!
 	 * @param stackAddOption Optional string which is used when stack->Add(hist, option)
@@ -364,7 +420,7 @@ namespace andi {  // everything is in a name space to structure it better
 	}
 
 	/**
-	 * @brief Creates a legend for stack
+	 * @brief Creates a legend for a stack
 	 * @details Make sure the histograms in the stack have proper and short titles, as those are used for the legend
 	 * 
 	 * @param stack A stack of histograms
@@ -387,10 +443,18 @@ namespace andi {  // everything is in a name space to structure it better
 
 		return tempLegend;
 	}
+	/**
+	 * @}
+	 */
 
 	/**
-	 * @brief Fits a gaussian to a histogram
-	 * @details Fits a gaussian to the whole range of a histogram, formats the function and returns it. If verbose, it also prints out some information on it
+	 * @name Gauss Fits
+	 * @details Helper functions for single and double Gauss fits.
+	 * @{
+	 */
+	/**
+	 * @brief Fits a Gaussian distribution to a histogram
+	 * @details Fits a Gaussian to the whole range of a histogram, formats the function and returns it. If verbose, it also prints out some information on it
 	 * 
 	 * @param hist Pointer to the histogram to fit the gaussian on
 	 * @param verbose If true, some output of the guassian fit is shown
@@ -442,8 +506,10 @@ namespace andi {  // everything is in a name space to structure it better
 
 	}
 	/**
-	 * @brief Does the as doubleGaussFit but does not expected 0-centered distribution
-	 * @details Instead of choosing the range symmetrically around zero, the histogram's main is retrieved as the central value
+	 * @brief Does the as doubleGaussFit() but does not expected 0-centered distribution
+	 * @details Instead of choosing the range symmetrically around zero, the histogram's main is retrieved as the central value.
+	 *
+	 * This method should, at one point, replace the simple doubleGaussFit(). I've not yet had time to put this in.
 	 */
 	TF1 * doubleGaussFitNonZero(TH1 * hist, bool verbose = false, bool useAutoRange = true, double innerRangeMax = 0.05, double outerRangeMax = 0.3) {
 		double centralValue = hist->GetMean();
@@ -503,8 +569,8 @@ namespace andi {  // everything is in a name space to structure it better
 		return fitProper;
 	}
 	/**
-	 * @brief Helper function for double Gaussian function. Converts the double Gaussian into the two single Gaussians it is built from.
-	 * @details 
+	 * @brief Converts a double Gaussian fit function into the two single Gaussians it is built from
+	 * @details If you ever want to draw both of the functions individually.
 	 * 
 	 * @param funcGaus A pointer to a double Gaussian function
 	 * @return A pair of pointers to the functions, the Gaussian is built from.
@@ -522,6 +588,18 @@ namespace andi {  // everything is in a name space to structure it better
 
 		return std::make_pair(firstGaus, secondGaus);
 	}
+	/**
+	 * @}
+	 */
+
+	/**
+	 * @name Canvas Drawing and Saving
+	 * @details Methods for drawing a histogram on a canvas and saving the canvas. Usually, the canvas is returned.
+	 * 
+	 * Methods are in place which also apply a (double) Gaussian fit.
+	 * 
+	 * @{
+	 */
 	/**
 	 * @brief Draws a (1D) histogram onto a canvas, makes the title and saves it (optionally)
 	 * @details This few lines is the overhead I'm using all day, so I made this function. The canvas name is chosen as per the histogram name, with my convention (histograms start with a h, the according canvas is the same name, but with a c in front). There are some optional arguments
@@ -554,19 +632,19 @@ namespace andi {  // everything is in a name space to structure it better
 		return c;
 	}
 	/**
-	 * @brief See andi::createCanvasDrawAndSave. This version fits a Gauss
+	 * @brief See createCanvasDrawAndSave(). This version fits a Gauss
 	 */
 	TCanvas * createCanvasFitDrawAndSave(TH1 * h, TString filename, TString basename, bool save = true, int fit = 1) {
 		return createCanvasDrawAndSave(h, filename, basename, save, 1);
 	}
 	/**
-	 * @brief See andi::createCanvasDrawAndSave. This version fits a double Gauss.
+	 * @brief See createCanvasDrawAndSave(). This version fits a double Gauss.
 	 */
 	TCanvas * createCanvasFitDoubleDrawAndSave(TH1 * h, TString filename, TString basename, bool save = true, int fit = 2) {
 		return createCanvasDrawAndSave(h, filename, basename, save, 2);
 	}
 	/**
-	 * @brief See andi::createCanvasDrawAndSave. For TH2, moved the Z axis to the left as well.
+	 * @brief See createCanvasDrawAndSave(). For TH2, moves the Z axis to the left as well.
 	 */
 	TCanvas * createCanvasDrawAndSave(TH2 * h, TString filename, TString basename, bool save = true) {
 		TString canvasName = h->GetName();
@@ -579,7 +657,7 @@ namespace andi {  // everything is in a name space to structure it better
 		return c;
 	}
 	/**
-	 * @brief See andi::createCanvasDrawAndSave. For everything which comes from TObject. Like TGraph and sorts.
+	 * @brief See createCanvasDrawAndSave(). For everything which comes from TObject. Like TGraph and sorts.
 	 */
 	TCanvas * createCanvasDrawAndSave(TObject * h, TString filename, TString basename, bool save = true, TString drawParams = "") {
 		TString canvasName = h->GetName();
@@ -592,7 +670,7 @@ namespace andi {  // everything is in a name space to structure it better
 		return c;
 	}
 	/**
-	 * @brief See andi::createCanvasDrawAndSave. For THStack. Also creates a legend.
+	 * @brief See createCanvasDrawAndSave(). For THStack. Also creates a legend.
 	 */
 	TCanvas * createCanvasDrawAndSave(THStack * stack, TString filename, TString basename, bool save = true, TString stackTitle = "Histograms", double boxStartY = 0.7, double boxStartX = 0.7) {
 		TString canvasName = stack->GetName();
@@ -609,8 +687,19 @@ namespace andi {  // everything is in a name space to structure it better
 		return c;
 	}
 	/**
+	 * @}
+	 */
+	/**
 	 * @brief Reads in a Tree from multiple Files
-	 * @details For data collections of the same structure it is possible to append the trees after one another. This functions gives a convenient way to do so. The fileName parameter should point to a text file with the file name of a root file per line. The function returns a TTree with combined content.
+	 * @details For data collections of the same structure it is possible to append the trees after one another.
+	 * This functions gives a convenient way to do so.
+	 * 
+	 * The fileName parameter should point to a text file with the file name of a root file per line, like:
+	 * ~~~
+	 * file1.root
+	 * file2.root
+	 * ~~~
+	 * The function returns a TTree with combined content.
 	 * 
 	 * @param treeName Name of the tree in every file. Has to be equal.
 	 * @param fileName A text file with one file per line.
@@ -625,7 +714,7 @@ namespace andi {  // everything is in a name space to structure it better
 	}
 
 	/**
-	 * @brief My cut benchmarks.
+ 	 * @namespace cuts A namespace for my cut benchmarks.
 	 */
 	namespace cuts {
 
@@ -728,7 +817,13 @@ namespace andi {  // everything is in a name space to structure it better
 		}
 	}
 
-	// Following functions are for my specific analysis
+	/**
+	 * @name Containers for data from a particle
+	 * @details The structs and methods can be used to converts ROOT's `SetBranchAddress()` stuff again into C++ objects.
+	 * 
+	 * This is really for my specific analyses.
+	 * @{
+	*/
 	/**
 	 * @brief The properties of a particle
 	 * @details Small struct with publicly accessible member variables of the most important quantities of a particle.
@@ -800,5 +895,8 @@ namespace andi {  // everything is in a name space to structure it better
 			tuple->SetBranchAddress(baseString + "d2" + "chg", &(container.d2.chg));
 		}		
 	}
+	/**
+	 * @}
+	 */
 
 }
