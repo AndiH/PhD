@@ -10,7 +10,7 @@ LaTeX bibliography files I'm using in my thesis
 The plots and graphs and other visualizations I've done for my thesis and talks
 
 ## Programming
-Scripts and other small code snippets for programming. Easiest way to use them: Place `.rootrc` in your home directory, modify path to match location of the `common.cpp` and you're done. ROOT will include the file automatically from now on.
+Scripts and other small code snippets for programming. Easiest way to use them: Place `.rootrc` in your home directory, modify path to match location of the `common.cpp` and you're done. ROOT will include the file automatically from now on. The documentation for `common.cpp` is located at [http://andih.github.io/PhD/](http://andih.github.io/PhD/).
 
 Located in `root-aliases.sh`, my collection of ROOT shell aliases, making your life a little easier.
 
