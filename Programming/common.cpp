@@ -400,6 +400,8 @@ namespace andi {
 	 * @return THStack of histograms
 	 */
 	THStack * histogramsToStack(TObjArray * histos, TString stackAddOption = "") {
+		bool useSafeButStupidMethod = true;
+		if (useSafeButStupidMethod) TCanvas cTemp;
 		THStack * myStack = new THStack();
 		int nHistograms = histos->GetEntries();
 		TH1D * firstHist;
@@ -412,10 +414,12 @@ namespace andi {
 		name.Prepend("st");
 		myStack->SetName(name);
 		myStack->SetTitle(firstHist->GetTitle());
-		myStack->Draw("goff");
+		if (useSafeButStupidMethod) myStack->Draw();
+		if (!useSafeButStupidMethod) myStack->Draw("goff");
 		myStack->GetXaxis()->SetTitle(firstHist->GetXaxis()->GetTitle());
 		myStack->GetYaxis()->SetTitle(firstHist->GetYaxis()->GetTitle());
-
+		
+		if (useSafeButStupidMethod) cTemp.Close();
 		return myStack;
 	}
 
@@ -506,7 +510,7 @@ namespace andi {
 
 	}
 	/**
-	 * @brief Does the as doubleGaussFit() but does not expected 0-centered distribution
+	 * @brief Does the same as doubleGaussFit() but does not expected 0-centered distribution
 	 * @details Instead of choosing the range symmetrically around zero, the histogram's main is retrieved as the central value.
 	 *
 	 * This method should, at one point, replace the simple doubleGaussFit(). I've not yet had time to put this in.
@@ -529,6 +533,36 @@ namespace andi {
 		hist->Fit(fitPre2, "Q0R");
 		fitPre2->GetParameters(&parameters[3]);
 		// startParameters = &parameters;
+		return doubleGaussFit(hist, verbose, centralValue - outerRangeMax, centralValue + outerRangeMax, parameters);
+
+	}
+	/**
+	 * @brief A double Gauss fit, but the inner bins are removed for the prefit of the outer Gaussian
+	 * @details Sometimes, for distributions with low statistics in the outer bands, the outer Gauss fit will fail with the other methods in this file. This function provides a kind of *hack-ish* solution to circumvent this.
+	 * 
+	 * For the outer Gauss prefit, the input histogram is cloned and the center-most bins, which fall in the range of -innerRangeMax to +innerRangeMax, are removed. The outer Gauss prefit is then conducted on this new, temporary histogram, just as in the other methods. The rest of the method is equivalent to the other methods.
+	 * 
+	 * No autoRange supplied, as I think it does not make sense here.
+	 */
+	TF1 * doubleGaussFitExcludeCenter(TH1 * hist, bool verbose = false, double innerRangeMax = 0.05, double outerRangeMax = 0.3) {
+		double centralValue = hist->GetMean();  // this method is not yet working for non-zero fits TODO
+		Double_t parameters[6] = {0, 0, 0, 0, 0, 0};
+		gStyle->SetOptFit(1);
+
+		TH1D * htemp = new TH1D(* ((TH1D*)hist));
+		htemp->SetName("htemp");
+		for (int i = 0; i < htemp->GetNbinsX(); i++) {
+			if (TMath::Abs(htemp->GetBinLowEdge(i)) <= innerRangeMax)
+				htemp->SetBinContent(i, 0);  // this line needs to be adapted and tested to make it work for non-zero-centered distributions
+		}
+		TF1 * cutFit = new TF1("cutFit", "gaus", centralValue - outerRangeMax, centralValue - outerRangeMax);
+		htemp->Fit(cutFit, "Q0R");
+		cutFit->GetParameters(&parameters[3]);
+
+		TF1 * fitPre1 = new TF1("fitPre1", "gaus", centralValue - innerRangeMax, centralValue + innerRangeMax);
+		hist->Fit(fitPre1, "Q0R");
+		fitPre1->GetParameters(&parameters[0]);
+
 		return doubleGaussFit(hist, verbose, centralValue - outerRangeMax, centralValue + outerRangeMax, parameters);
 
 	}
