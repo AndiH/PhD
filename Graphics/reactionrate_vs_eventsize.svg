@@ -9,11 +9,11 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="566.3385"
-   height="550.35529"
+   width="571.47797"
+   height="555.7171"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.2 r9819"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="reactionrate_vs_eventsize.svg">
   <defs
      id="defs4">
@@ -95,23 +95,23 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3257707"
-     inkscape:cx="162.44827"
-     inkscape:cy="358.16979"
+     inkscape:zoom="0.95308485"
+     inkscape:cx="405.83668"
+     inkscape:cy="301.81669"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1440"
-     inkscape:window-height="799"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1103"
+     inkscape:window-x="1440"
+     inkscape:window-y="23"
      inkscape:window-maximized="1"
-     fit-margin-top="0"
-     fit-margin-left="0"
-     fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-top="3"
+     fit-margin-left="3"
+     fit-margin-right="3"
+     fit-margin-bottom="3" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -128,7 +128,7 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-61.789795,-296.27927)">
+     transform="translate(-59.650342,-293.91747)">
     <g
        id="g5344"
        style="stroke:#ffb380;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0">
@@ -165,7 +165,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="462.93976"
        y="820.55847"
        id="text5127"
@@ -178,17 +178,17 @@
        sodipodi:linespacing="100%"
        id="text5131"
        y="76.350342"
-       x="-479.42993"
-       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       x="-329.64398"
+       style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"
        transform="matrix(0,-1,1,0,0,0)"><tspan
          y="76.350342"
-         x="-479.42993"
+         x="-329.64398"
          id="tspan5133"
-         sodipodi:role="line">Reaction Rate / Hz</tspan></text>
+         sodipodi:role="line">Triggered Reaction Rate / Hz</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="104.96839"
        y="795.10809"
        id="text5041"
@@ -197,24 +197,24 @@
          id="tspan5043"
          x="104.96839"
          y="795.10809">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5047">4</tspan></tspan></text>
     <text
        sodipodi:linespacing="100%"
        id="text5049"
        y="795.10809"
        x="268.70596"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          y="795.10809"
          x="268.70596"
          id="tspan5051"
          sodipodi:role="line">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5071">5</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="432.5264"
        y="795.10809"
        id="text5055"
@@ -223,33 +223,33 @@
          id="tspan5057"
          x="432.5264"
          y="795.10809">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5069">6</tspan></tspan></text>
     <text
        sodipodi:linespacing="100%"
        id="text5061"
        y="795.10809"
        x="596.30969"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          y="795.10809"
          x="596.30969"
          id="tspan5063"
          sodipodi:role="line">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5067">7</tspan></tspan></text>
     <text
        sodipodi:linespacing="100%"
        id="text5073"
        y="770.95758"
        x="83.934586"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          y="770.95758"
          x="83.934586"
          id="tspan5075"
          sodipodi:role="line">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5079">2</tspan></tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow2Lstart);marker-end:url(#Arrow2Lend)"
@@ -302,7 +302,7 @@
        sodipodi:nodetypes="cc" />
     <path
        sodipodi:type="arc"
-       style="fill:#1b6ae0;stroke:none;fill-opacity:1"
+       style="fill:#1b6ae0;fill-opacity:1;stroke:none"
        id="path5290"
        sodipodi:cx="30.708834"
        sodipodi:cy="549.29565"
@@ -318,11 +318,11 @@
        sodipodi:cy="549.29565"
        sodipodi:cx="30.708834"
        id="path5420"
-       style="fill:#568856;stroke:none;fill-opacity:1"
+       style="fill:#568856;fill-opacity:1;stroke:none"
        sodipodi:type="arc" />
     <path
        sodipodi:type="arc"
-       style="fill:#eb5c5c;stroke:none;fill-opacity:1"
+       style="fill:#eb5c5c;fill-opacity:1;stroke:none"
        id="path5422"
        sodipodi:cx="30.708834"
        sodipodi:cy="549.29565"
@@ -428,11 +428,11 @@
        sodipodi:cy="549.29565"
        sodipodi:cx="30.708834"
        id="path5461"
-       style="fill:#e1c349;stroke:none;fill-opacity:1"
+       style="fill:#e1c349;fill-opacity:1;stroke:none"
        sodipodi:type="arc" />
     <text
        xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#1b6ae0;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#1b6ae0;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="217.00763"
        y="310.69586"
        id="text5465"
@@ -446,7 +446,7 @@
        id="text5471"
        y="418.87317"
        x="225.37648"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#568856;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#568856;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          y="418.87317"
          x="225.37648"
@@ -454,7 +454,7 @@
          sodipodi:role="line">LHCb</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#e84545;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#e84545;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="438.64145"
        y="467.25278"
        id="text5475"
@@ -469,7 +469,7 @@
          id="tspan5483">CMS</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#f1957c;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#f1957c;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="288.33264"
        y="491.93857"
        id="text5485"
@@ -483,16 +483,16 @@
        id="text5489"
        y="531.9386"
        x="262.33264"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b76732;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b76732;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          y="531.9386"
          x="262.33264"
          id="tspan5491"
          sodipodi:role="line"
-         style="font-size:16px;fill:#b76732">HERA-B</tspan></text>
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b76732;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">HERA-B</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#7dc24e;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#7dc24e;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="128.46687"
        y="576.62976"
        id="text5493"
@@ -501,22 +501,22 @@
          id="tspan5495"
          x="128.46687"
          y="576.62976"
-         style="font-size:16px;fill:#7dc24e;fill-opacity:1">KLOE</tspan></text>
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#7dc24e;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">KLOE</tspan></text>
     <text
        sodipodi:linespacing="100%"
        id="text5497"
        y="578.62976"
        x="243.32996"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#8282ff;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#8282ff;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
-         style="font-size:16px;fill:#8282ff;fill-opacity:1"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#8282ff;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
          y="578.62976"
          x="243.32996"
          id="tspan5499"
          sodipodi:role="line">BESIII</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#e580ff;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#e580ff;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="365.32996"
        y="560.62976"
        id="text5501"
@@ -525,21 +525,21 @@
          id="tspan5503"
          x="365.32996"
          y="560.62976"
-         style="font-size:16px;fill:#e580ff;fill-opacity:1">CDF</tspan><tspan
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#e580ff;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">CDF</tspan><tspan
          sodipodi:role="line"
          x="365.32996"
          y="576.62976"
-         style="font-size:16px;fill:#e580ff;fill-opacity:1"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#e580ff;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
          id="tspan5505">D0</tspan></text>
     <text
        sodipodi:linespacing="100%"
        id="text5507"
        y="660.74976"
        x="561.10266"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ddbb30;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ddbb30;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          id="tspan5511"
-         style="font-size:18px;fill:#ddbb30;fill-opacity:1"
+         style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#ddbb30;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
          y="660.74976"
          x="561.10266"
          sodipodi:role="line">ALICE</tspan></text>
@@ -548,16 +548,16 @@
        id="text5515"
        y="637.85089"
        x="294.2861"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#7dc24e;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#7dc24e;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
-         style="font-size:16px;fill:#7dc24e;fill-opacity:1"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#7dc24e;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
          y="637.85089"
          x="294.2861"
          id="tspan5517"
          sodipodi:role="line">CDF</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#7dc24e;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#7dc24e;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="319.60571"
        y="654.27704"
        id="text5519"
@@ -566,15 +566,15 @@
          id="tspan5521"
          x="319.60571"
          y="654.27704"
-         style="font-size:16px;fill:#7dc24e;fill-opacity:1">H1</tspan><tspan
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#7dc24e;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">H1</tspan><tspan
          sodipodi:role="line"
          x="319.60571"
          y="670.27704"
-         style="font-size:16px;fill:#7dc24e;fill-opacity:1"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#7dc24e;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
          id="tspan5523">ZEUS</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#7dc24e;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#7dc24e;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="377.98535"
        y="758.66205"
        id="text5525"
@@ -583,22 +583,22 @@
          id="tspan5527"
          x="377.98535"
          y="758.66205"
-         style="font-size:16px;fill:#7dc24e;fill-opacity:1">NA49</tspan></text>
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#7dc24e;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">NA49</tspan></text>
     <text
        sodipodi:linespacing="100%"
        id="text5529"
        y="752.66205"
        x="287.98535"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00c0ef;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00c0ef;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
-         style="font-size:16px;fill:#00c0ef;fill-opacity:1"
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#00c0ef;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
          y="752.66205"
          x="287.98535"
          id="tspan5531"
          sodipodi:role="line">UA1</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b76732;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#b76732;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="291.98535"
        y="816.3559"
        id="text5533"
@@ -607,7 +607,7 @@
          id="tspan5535"
          x="291.98535"
          y="816.3559"
-         style="font-size:16px;fill:#b76732;fill-opacity:1">LEP</tspan></text>
+         style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#b76732;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">LEP</tspan></text>
     <g
        id="g4517">
       <path
@@ -677,18 +677,18 @@
        id="text4525"
        y="305.43747"
        x="337.36673"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#528fea;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#528fea;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          y="305.43747"
          x="337.36673"
          id="tspan4527"
          sodipodi:role="line"
-         style="font-size:12px">High Reaction Rate</tspan><tspan
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">High Reaction Rate</tspan><tspan
          y="317.43747"
          x="337.36673"
          sodipodi:role="line"
          id="tspan4529"
-         style="font-size:12px">(200 GB/s)</tspan></text>
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">(200 GB/s)</tspan></text>
     <g
        id="g4553">
       <path
@@ -717,7 +717,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#6ca26c;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#6ca26c;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="331.49112"
        y="368.24622"
        id="text4543"
@@ -726,12 +726,12 @@
          sodipodi:role="line"
          x="331.49112"
          y="368.24622"
-         style="font-size:12px">High Level-1 Trigger</tspan><tspan
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">High Level-1 Trigger</tspan><tspan
          sodipodi:role="line"
          x="331.49112"
-         y="378.24622"
+         y="380.24622"
          id="tspan4551"
-         style="font-size:12px">(1 MHz)</tspan></text>
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">(1 MHz)</tspan></text>
     <g
        id="g4567">
       <g
@@ -771,18 +771,18 @@
        id="text4573"
        y="394.16971"
        x="607.05884"
-       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#ef7d7d;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:end;fill:#ef7d7d;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          id="tspan4577"
          y="394.16971"
          x="607.05884"
          sodipodi:role="line"
-         style="text-align:end;text-anchor:end;fill:#ef7d7d;fill-opacity:1;font-size:12px">High No. Channels</tspan><tspan
-         y="404.16971"
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#ef7d7d;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">High No. Channels</tspan><tspan
+         y="406.16971"
          x="607.05884"
          sodipodi:role="line"
          id="tspan4581"
-         style="text-align:end;text-anchor:end;fill:#ef7d7d;fill-opacity:1;font-size:12px">(&gt;500 Gbit/s)</tspan></text>
+         style="font-size:12px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#ef7d7d;fill-opacity:1;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">(&gt;500 Gbit/s)</tspan></text>
     <g
        transform="matrix(0.87956785,0.47577347,-0.47577347,0.87956785,265.70224,33.579282)"
        id="g4583">
@@ -1884,7 +1884,7 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="87.934586"
        y="680.75378"
        id="text5081"
@@ -1893,24 +1893,24 @@
          id="tspan5083"
          x="87.934586"
          y="680.75378">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5119">3</tspan></tspan></text>
     <text
        sodipodi:linespacing="100%"
        id="text5087"
        y="592.53284"
        x="87.934586"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          y="592.53284"
          x="87.934586"
          id="tspan5089"
          sodipodi:role="line">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5117">4</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="87.934586"
        y="504.27185"
        id="text5093"
@@ -1919,24 +1919,24 @@
          id="tspan5095"
          x="87.934586"
          y="504.27185">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5115">5</tspan></tspan></text>
     <text
        sodipodi:linespacing="100%"
        id="text5099"
        y="416.14233"
        x="87.934586"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        xml:space="preserve"><tspan
          y="416.14233"
          x="87.934586"
          id="tspan5101"
          sodipodi:role="line">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5113">6</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:18px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#333333;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="87.934586"
        y="327.8671"
        id="text5105"
@@ -1945,11 +1945,11 @@
          id="tspan5107"
          x="87.934586"
          y="327.8671">10<tspan
-   style="font-size:65.00091553%;baseline-shift:super;fill:#333333;stroke:none"
+   style="font-size:65.00091553%;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;baseline-shift:super;fill:#333333;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
    id="tspan5111">7</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffb380;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+       style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffb380;fill-opacity:1;stroke:none;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro"
        x="287.29077"
        y="226.11542"
        id="text5153"
@@ -1959,6 +1959,6 @@
          id="tspan5155"
          x="287.29077"
          y="226.11542"
-         style="font-size:13px">Datarate</tspan></text>
+         style="font-size:13px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Myriad Pro;-inkscape-font-specification:Myriad Pro">Datarate</tspan></text>
   </g>
 </svg>
